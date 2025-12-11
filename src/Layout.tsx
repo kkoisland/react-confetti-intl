@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import LanguageSelector from "./components/LanguageSelector";
 
 const NAV_ACTIVE_STYLES = "text-indigo-600 dark:text-indigo-300 font-bold";
 export const NAV_HOVER_STYLES =
@@ -60,6 +61,8 @@ const Layout = () => {
 								</NavLink>
 							))}
 						</div>
+
+						<LanguageSelector />
 
 						{/* Right side buttons */}
 						<div className="flex items-center gap-4">
