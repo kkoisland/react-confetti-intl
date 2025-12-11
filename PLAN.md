@@ -6,6 +6,9 @@
 - **スタイル**: チュートリアルではなく読み物。実装手順の詳細ではなく、実装内容に触れることで本格的感を出す
 - **サンプルコード**: 詳しく知りたい人はGitHubのサンプルを見る前提
 - **対象言語**: 10言語（ja-JP, en-US, it-IT, de-DE, zh-CN, ko-KR, es-ES, fr-FR, sv-SE, nl-NL）
+- **コーディング規約**:
+  - App.tsx以外のコンポーネントはアロー関数で定義
+  - App.tsxのみ`function App()`形式（Reactの慣習に従う）
 
 ---
 
@@ -98,14 +101,13 @@ src/components/LanguageSelector.tsx
 
 注意：
 - PlaygroundPageは翻訳しない（Section 9で自動生成IDを使って翻訳する）
-- Section 5ではBasic, Countdown, Toast, Seasonalのみ翻訳
+- Section 5で翻訳するのはBasicPageのみ（他はSection 6で実装）
 
-執筆内容（上記以外）
-- Contextを使う理由（グローバル状態管理）
-- useLocaleカスタムフックの役割
-- 言語セレクターのUI実装例
+執筆内容
+- LocaleContextの役割と仕組み（Section 4に追加）
+- useLocaleContextカスタムフック
+- 言語セレクターのUI実装
 - 言語切り替え時の再レンダリングの仕組み
-- デフォルトロケールの決定方法（ブラウザ言語検出はSection 8）
 
 ### Section 6: 表示機能（変数・リッチテキスト）
 #1. 変数を含む翻訳を実装
@@ -187,6 +189,7 @@ intl.formatRelativeTime(diff, "minute") などで相対時間表示「◯分前�
 - 状況に応じて方法を組み合わせる
 
 ### Section 9: 大規模開発の視点
+9.1 IDの自動生成（@formatjs/cli）
 PlaygroundPageをID自動生成に移行
 #1. @formatjs/cliをインストール
 #2. PlaygroundPageの文字列にdefaultMessageを追加
@@ -194,8 +197,11 @@ PlaygroundPageをID自動生成に移行
 "extract": "formatjs extract \"src/pages/PlaygroundPage.tsx\" --out-file src/i18n/locales/en-US.json --format simple
 --id-interpolation-pattern '[sha512:contenthash:base64:6]'"
 #4. 実行して自動IDを生成
-#5. 他の7言語に翻訳を追加
-#6 動作確認 
+9.2 翻訳管理ワークフロー
+- Descriptionフィールドの追加
+- 似たようなストリングへの注意
+- 翻訳会社への受け渡し
+- 翻訳の組み込みとレビュー
 
 執筆内容
 実装したこと：
@@ -353,17 +359,24 @@ src/
 - ✅ react-intlインストール完了
 - ✅ Section 4実装完了
   - src/i18n/ディレクトリ構成作成完了
-  - IntlProvider実装完了
+  - IntlProvider実装完了（アロー関数に統一）
   - main.tsxでラップ完了
   - BasicPage翻訳完了（10言語）
   - 動作確認完了
 - ✅ Section 4執筆完了（section04.md）
+- ✅ Section 5実装完了
+  - LocaleContext実装（IntlProvider内に統合）
+  - useLocaleContextフック作成
+  - LanguageSelectorコンポーネント作成
+  - Layout.tsxのヘッダーに配置
+  - 動作確認完了
+- ✅ Section 5執筆完了（section05.md）
 
 ### 次のステップ
 
-1. **Section 5実装・執筆**
-   - 言語切り替えUI実装
-   - section05.md作成
+1. **Section 6実装・執筆**
+   - 変数・リッチテキストを含む翻訳実装
+   - section06.md作成
 
 ---
 
@@ -380,7 +393,8 @@ src/
   - `section02.md` - 第2節（完了、レビュー・修正済み）
   - `section03.md` - 第3節（完了、レビュー・修正済み）
   - `section04.md` - 第4節（完了）
-  - `section05.md以降` - 未作成
+  - `section05.md` - 第5節（完了）
+  - `section06.md以降` - 未作成
 - アクセス権: 読み書き可能
 
 ### 参考ディレクトリ

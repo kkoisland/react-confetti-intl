@@ -16,9 +16,15 @@ const BasicPage = () => {
 				onClick={handleClick}
 			>
 				{isActive ? (
-					<FormattedMessage id="basic.stopButton" defaultMessage="Stop Confetti" />
+					<FormattedMessage
+						id="basic.stopButton"
+						defaultMessage="Stop Confetti"
+					/>
 				) : (
-					<FormattedMessage id="basic.startButton" defaultMessage="Start Confetti" />
+					<FormattedMessage
+						id="basic.startButton"
+						defaultMessage="Start Confetti"
+					/>
 				)}
 			</button>
 		</div>

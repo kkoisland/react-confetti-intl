@@ -47,8 +47,8 @@ interface IntlProviderProps {
 	children: ReactNode;
 }
 
-export function IntlProvider({ children }: IntlProviderProps) {
-	const [locale, setLocale] = useState<Locale>("it-IT");
+export const IntlProvider = ({ children }: IntlProviderProps) => {
+	const [locale, setLocale] = useState<Locale>("ja-JP");
 
 	return (
 		<LocaleContext.Provider value={{ locale, setLocale }}>
@@ -61,4 +61,4 @@ export function IntlProvider({ children }: IntlProviderProps) {
 			</ReactIntlProvider>
 		</LocaleContext.Provider>
 	);
-}
+};
