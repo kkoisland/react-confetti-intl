@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./Layout";
 import BasicPage from "./pages/BasicPage";
 import CountdownPage from "./pages/CountdownPage";
+import FormatPage from "./pages/FormatPage";
 import PlaygroundPage from "./pages/PlaygroundPage";
 import SeasonalPage from "./pages/SeasonalPage";
 import ToastPage from "./pages/ToastPage";
@@ -15,6 +16,7 @@ function App() {
 				<Route path="/countdown" element={<CountdownPage />} />
 				<Route path="/toast" element={<ToastPage />} />
 				<Route path="/seasonal" element={<SeasonalPage />} />
+				<Route path="/format" element={<FormatPage />} />
 				<Route path="/playground" element={<PlaygroundPage />} />
 			</Route>
 		</Routes>

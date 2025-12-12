@@ -109,7 +109,25 @@ src/components/LanguageSelector.tsx
 - 言語セレクターのUI実装
 - 言語切り替え時の再レンダリングの仕組み
 
-### Section 6: 表示機能（変数・リッチテキスト）
+### Section 6: 言語設定の保存と管理
+#1. LocaleContext.tsxの初期state設定を修正
+- localStorage読み込み
+- ブラウザ言語検出
+- 優先順位実装（localStorage → ブラウザ言語 → デフォルト）
+#2. 言語切り替え時にlocalStorageに保存
+#3. 動作確認（リロード後も言語が保持されるか）
+
+執筆
+実装した方法：
+- localStorageで永続化する（リロード後も保持される）ー実務でいちばん多い
+- ブラウザの言語設定を初期値に使う（localStorageがない場合のフォールバック）
+他の選択肢：
+- URLパラメータで保持・共有する（リロード後も保持される／Storage不要）
+- Cookie で保持する（SSR時に初期HTMLに反映したい場合）
+- DB保存＋API（ログインユーザーで端末またぎ共有）
+- 状況に応じて方法を組み合わせる
+
+### Section 7: 表示機能（変数・リッチテキスト）
 #1. 変数を含む翻訳を実装
 - 既存ページで変数が必要な箇所を特定
 - FormattedMessageで変数を渡す
@@ -126,13 +144,12 @@ src/components/LanguageSelector.tsx
 - 翻訳ファイルに追加
 #4. 動作確認
 
-執筆:
+執筆内容:
 FormattedMessage（変数、リッチテキスト）
 useIntl Hook の基本
 formatMessage() の使い方
-実装場所：ToastPageの"All Completed!"
 
-### Section 7: 表示機能（日付・通貨・数値・相対時間、桁区切り・単位など）
+### Section 8: 表示機能（日付・通貨・数値・相対時間、桁区切り・単位など）
 #1. サンプル用コンポーネント IntlShowcase.tsx を作成
 #2. 表示用の固定データ（日付・金額・数値・基準日時）を定義
 静的フォーマット）
@@ -170,25 +187,33 @@ intl.formatRelativeTime(diff, "minute") などで相対時間表示「◯分前�
 動的（useIntl）：業務ロジックと密接 → 実務で最頻出
 静的（Formatted系）：UI確認・単純表示 → デザイン確認向き
 
-### Section 8: 言語設定の保存と管理
-#1. LocaleContext.tsxの初期state設定を修正
-- localStorage読み込み
-- ブラウザ言語検出
-- 優先順位実装（localStorage → ブラウザ言語 → デフォルト）
-#2. 言語切り替え時にlocalStorageに保存
-#3. 動作確認（リロード後も言語が保持されるか）
+### Section 9: AIを使った翻訳のベストプラクティス
+#1. 翻訳管理ワークフロー
+- Descriptionフィールドの追加
+- 似たようなストリングへの注意
+#3. AIを使って、プロンプトで一気にやる
+#4. 翻訳がおかしいところを直す
+#5. Truncateしてしまった箇所を直す
 
-執筆
-実装した方法：
-- localStorageで永続化する（リロード後も保持される）ー実務でいちばん多い
-- ブラウザの言語設定を初期値に使う（localStorageがない場合のフォールバック）
-他の選択肢：
-- URLパラメータで保持・共有する（リロード後も保持される／Storage不要）
-- Cookie で保持する（SSR時に初期HTMLに反映したい場合）
-- DB保存＋API（ログインユーザーで端末またぎ共有）
-- 状況に応じて方法を組み合わせる
+執筆内容:
+#1. 翻訳管理ワークフロー
+#2. プロンプトの紹介
+A. Claude Codeなど、コードコンテキスト（code context）でやる場合。
+- AI に ファイルパス・フォルダ構造・プロジェクト全体の関係 を渡し、「AI がコードベース全体を理解して回答する」タイプの仕組み。
+B. ChatGPTなど、コード参照コンテキスト（file-based context）でやる場合。
+- ChatGPTなど。ファイルをアップロードして、その内容を参照しながらコーディングする。
+この zip は React アプリです。
+- 対象: src/pages 配下
+- 目的: ハードコード文字列を抽出
+- 出力:
+  1) 翻訳キー一覧
+  2) ja/en/it/de/zh/ko/es/fr/sv/nl の翻訳JSON
+  3) 各ページの置き換え例
+#3. 実際に起こったTruncationの問題
+#4. 自分の言語でない翻訳は２つのAIにチェックしてもらう
+#5. 翻訳会社に渡す場合
 
-### Section 9: 大規模開発の視点
+### Section 10: 大規模開発の視点
 9.1 IDの自動生成（@formatjs/cli）
 PlaygroundPageをID自動生成に移行
 #1. @formatjs/cliをインストール
@@ -197,16 +222,11 @@ PlaygroundPageをID自動生成に移行
 "extract": "formatjs extract \"src/pages/PlaygroundPage.tsx\" --out-file src/i18n/locales/en-US.json --format simple
 --id-interpolation-pattern '[sha512:contenthash:base64:6]'"
 #4. 実行して自動IDを生成
-9.2 翻訳管理ワークフロー
-- Descriptionフィールドの追加
-- 似たようなストリングへの注意
-- 翻訳会社への受け渡し
-- 翻訳の組み込みとレビュー
 
-執筆内容
-実装したこと：
-- ID自動生成の仕組みと利点
-ベストプラクティス（実装なし）：
+執筆内容:
+#1. ID自動生成の仕組みと利点
+#2. 事前にテストを書いておくと安心
+#3. ベストプラクティス（実装なし）：
 - 文字列を小さく切り分けない理由
     悪い例：「こんにちは」+ name + 「さん」
     良い例：「{name}さん、こんにちは」
@@ -371,10 +391,28 @@ src/
   - Layout.tsxのヘッダーに配置
   - 動作確認完了
 - ✅ Section 5執筆完了（section05.md）
+- ✅ FormatPage実装完了（Section 7 - フォーマット機能デモページ）
+  - FormatPage.tsx作成（/format ルート）
+  - 左右2列比較形式（左：選択言語、右：英語固定）
+  - 8種類のフォーマット例を実装：
+    - Date & Time: formatDate, formatTime
+    - Currency: 同額比較 + 為替換算比較
+    - Number: 数値、パーセント、単位付き
+    - Relative Time: 相対時間表示
+    - List: formatList
+    - Date Range: formatDateTimeRange
+    - Display Name: formatDisplayName（言語名、地域名）
+    - Plural: 複数形対応（0, 1, 3の例）
+  - ロケール別通貨マッピング実装（10言語対応）
+  - App.tsxにルーティング追加
+  - Layout.tsxに"Format"タブ追加
 
 ### 次のステップ
 
-1. **Section 6実装・執筆**
+1. **FormatPage翻訳対応**
+   - 翻訳ファイルにキーを追加（format.itemCount, format.apple, format.banana, format.orange）
+
+2. **Section 6実装・執筆**
    - 変数・リッチテキストを含む翻訳実装
    - section06.md作成
 

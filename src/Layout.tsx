@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FormattedMessage } from "react-intl";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import LanguageSelector from "./components/LanguageSelector";
 
@@ -25,11 +26,12 @@ const Layout = () => {
 	}, [isDarkMode]);
 
 	const navLinks = [
-		{ to: "/basic", label: "Basic" },
-		{ to: "/countdown", label: "Countdown" },
-		{ to: "/toast", label: "Toast" },
-		{ to: "/seasonal", label: "Seasonal" },
-		{ to: "/playground", label: "Playground" },
+		{ to: "/basic", labelId: "nav.basic" },
+		{ to: "/countdown", labelId: "nav.countdown" },
+		{ to: "/toast", labelId: "nav.toast" },
+		{ to: "/seasonal", labelId: "nav.seasonal" },
+		{ to: "/format", labelId: "nav.format" },
+		{ to: "/playground", labelId: "nav.playground" },
 	];
 
 	return (
@@ -58,7 +60,10 @@ const Layout = () => {
 										}`
 									}
 								>
-									{link.label}
+									<FormattedMessage
+										id={link.labelId}
+										defaultMessage={link.to.slice(1)}
+									/>
 								</NavLink>
 							))}
 						</div>
@@ -96,7 +101,10 @@ const Layout = () => {
 										}`
 									}
 								>
-									{link.label}
+									<FormattedMessage
+										id={link.labelId}
+										defaultMessage={link.to.slice(1)}
+									/>
 								</NavLink>
 							))}
 						</div>
@@ -122,13 +130,14 @@ const Layout = () => {
 						</a>
 					</div>
 					<div>
+						View Source on{" "}
 						<a
 							href="https://github.com/kkoisland/react-confetti-app"
 							target="_blank"
 							rel="noopener noreferrer"
 							className={`underline ${NAV_HOVER_STYLES}`}
 						>
-							View Source on GitHub
+							GitHub
 						</a>
 					</div>
 				</div>
