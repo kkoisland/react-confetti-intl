@@ -7,6 +7,7 @@ export const NAV_HOVER_STYLES =
 	"hover:text-indigo-600 dark:hover:text-indigo-300";
 
 const Layout = () => {
+	const appName = "React Confetti";
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isDarkMode, setIsDarkMode] = useState(() => {
 		const saved = localStorage.getItem("react-confetti-app:darkMode");
@@ -41,7 +42,7 @@ const Layout = () => {
 								to="/"
 								className={`text-2xl font-bold ${NAV_HOVER_STYLES} transition-colors`}
 							>
-								React Confetti
+								{appName}
 							</Link>
 						</div>
 
@@ -110,14 +111,14 @@ const Layout = () => {
 			<footer className="py-4 px-4 text-center text-sm text-gray-600 dark:text-gray-400">
 				<div className="flex flex-col gap-2">
 					<div>
-						React Confetti Sample App by kkoisland (Keiko) | Built with{" "}
+						<b>{appName} Sample App</b> by kkoisland (Keiko) | Built with{" "}
 						<a
 							href="https://github.com/alampros/react-confetti"
 							target="_blank"
 							rel="noopener noreferrer"
 							className={`underline ${NAV_HOVER_STYLES}`}
 						>
-							react-confetti
+							<em>react-confetti</em>
 						</a>
 					</div>
 					<div>
