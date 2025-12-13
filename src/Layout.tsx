@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { FormattedMessage } from "react-intl";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import LanguageSelector from "./components/LanguageSelector";
 
@@ -26,12 +25,12 @@ const Layout = () => {
 	}, [isDarkMode]);
 
 	const navLinks = [
-		{ to: "/basic", labelId: "nav.basic" },
-		{ to: "/countdown", labelId: "nav.countdown" },
-		{ to: "/toast", labelId: "nav.toast" },
-		{ to: "/seasonal", labelId: "nav.seasonal" },
-		{ to: "/playground", labelId: "nav.playground" },
-		{ to: "/format", labelId: "nav.format" },
+		{ to: "/basic", label: "Basic" },
+		{ to: "/countdown", label: "Countdown" },
+		{ to: "/toast", label: "Toast" },
+		{ to: "/seasonal", label: "Seasonal" },
+		{ to: "/playground", label: "Playground" },
+		{ to: "/format", label: "Format" },
 	];
 
 	return (
@@ -60,10 +59,7 @@ const Layout = () => {
 										}`
 									}
 								>
-									<FormattedMessage
-										id={link.labelId}
-										defaultMessage={link.to.slice(1)}
-									/>
+									{link.label}
 								</NavLink>
 							))}
 						</div>
@@ -101,10 +97,7 @@ const Layout = () => {
 										}`
 									}
 								>
-									<FormattedMessage
-										id={link.labelId}
-										defaultMessage={link.to.slice(1)}
-									/>
+									{link.label}
 								</NavLink>
 							))}
 						</div>
