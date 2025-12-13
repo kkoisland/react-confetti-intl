@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { IntlProvider as ReactIntlProvider } from "react-intl";
 import type { Locale } from "./types";
 
@@ -47,8 +47,42 @@ interface IntlProviderProps {
 	children: ReactNode;
 }
 
+const SUPPORTED_LOCALES: Locale[] = [
+	"ja-JP",
+	"en-US",
+	"it-IT",
+	"de-DE",
+	"zh-CN",
+	"ko-KR",
+	"es-ES",
+	"fr-FR",
+	"sv-SE",
+	"nl-NL",
+];
+
+const getInitialLocale = (): Locale => {
+	// 1. Check localStorage
+	const savedLocale = localStorage.getItem("react-confetti-intl:locale");
+	if (savedLocale && SUPPORTED_LOCALES.includes(savedLocale as Locale)) {
+		return savedLocale as Locale;
+	}
+
+	// 2. Check browser language
+	const browserLang = navigator.language;
+	if (SUPPORTED_LOCALES.includes(browserLang as Locale)) {
+		return browserLang as Locale;
+	}
+
+	// 3. Default to en-US
+	return "en-US";
+};
+
 export const IntlProvider = ({ children }: IntlProviderProps) => {
-	const [locale, setLocale] = useState<Locale>("ja-JP");
+	const [locale, setLocale] = useState<Locale>(getInitialLocale);
+
+	useEffect(() => {
+		localStorage.setItem("react-confetti-intl:locale", locale);
+	}, [locale]);
 
 	return (
 		<LocaleContext.Provider value={{ locale, setLocale }}>
