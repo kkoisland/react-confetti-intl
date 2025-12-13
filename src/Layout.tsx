@@ -10,7 +10,7 @@ const Layout = () => {
 	const appName = "React Confetti";
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isDarkMode, setIsDarkMode] = useState(() => {
-		const saved = localStorage.getItem("react-confetti-app:darkMode");
+		const saved = localStorage.getItem("react-confetti-intl:darkMode");
 		if (saved !== null) return JSON.parse(saved);
 		return window.matchMedia("(prefers-color-scheme: dark)").matches;
 	});
@@ -18,7 +18,7 @@ const Layout = () => {
 
 	useEffect(() => {
 		localStorage.setItem(
-			"react-confetti-app:darkMode",
+			"react-confetti-intl:darkMode",
 			JSON.stringify(isDarkMode),
 		);
 		document.documentElement.classList.toggle("dark", isDarkMode);
@@ -125,7 +125,7 @@ const Layout = () => {
 					<div>
 						View Source on{" "}
 						<a
-							href="https://github.com/kkoisland/react-confetti-app"
+							href="https://github.com/kkoisland/react-confetti-intl"
 							target="_blank"
 							rel="noopener noreferrer"
 							className={`underline ${NAV_HOVER_STYLES}`}
