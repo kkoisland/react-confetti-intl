@@ -16,8 +16,8 @@ function App() {
 				<Route path="/countdown" element={<CountdownPage />} />
 				<Route path="/toast" element={<ToastPage />} />
 				<Route path="/seasonal" element={<SeasonalPage />} />
-				<Route path="/format" element={<FormatPage />} />
 				<Route path="/playground" element={<PlaygroundPage />} />
+				<Route path="/format" element={<FormatPage />} />
 			</Route>
 		</Routes>
 	);

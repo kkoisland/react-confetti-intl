@@ -391,30 +391,40 @@ src/
   - Layout.tsxのヘッダーに配置
   - 動作確認完了
 - ✅ Section 5執筆完了（section05.md）
-- ✅ FormatPage実装完了（Section 7 - フォーマット機能デモページ）
+- ✅ FormatPage実装完了（Section 8 - フォーマット機能デモページ）
   - FormatPage.tsx作成（/format ルート）
   - 左右2列比較形式（左：選択言語、右：英語固定）
-  - 8種類のフォーマット例を実装：
-    - Date & Time: formatDate, formatTime
-    - Currency: 同額比較 + 為替換算比較
-    - Number: 数値、パーセント、単位付き
-    - Relative Time: 相対時間表示
-    - List: formatList
-    - Date Range: formatDateTimeRange
-    - Display Name: formatDisplayName（言語名、地域名）
-    - Plural: 複数形対応（0, 1, 3の例）
+  - カラムヘッダー追加（動的言語名 vs "English (Reference)"）
+  - 8種類のフォーマット例を実装（論理的順序に並び替え）：
+    - Date & Time: formatDate, formatTime（コード例付き）
+    - Date Range: formatDateTimeRange（コード例付き）
+    - Relative Time: 相対時間表示（コード例付き）
+    - Currency: 同額比較 + 為替換算比較（コード例付き）
+    - Number: 数値、パーセント、単位付き（コード例付き）
+    - List: formatList（コード例付き）
+    - Display Name: formatDisplayName（言語名、地域名）（コード例付き）
+    - ICU Message Format（コード例 + JSON定義例付き）：
+      - Plural: 複数形対応（0, 1, 3の例）
+      - Select: 性別対応（male, female, otherの例）
+      - Selectordinal: 序数対応（1st, 2nd, 3rdの例）
   - ロケール別通貨マッピング実装（10言語対応）
+  - ICU Message Format用JSON例マッピング実装（10言語対応）
+  - 全10言語の翻訳ファイルにICU Message Format定義追加
+    - format.itemCount（複数形ルールの違いを表示）
+    - format.gender（性別による表現の違いを表示）
+    - format.position（序数の違いを表示）
   - App.tsxにルーティング追加
-  - Layout.tsxに"Format"タブ追加
+  - Layout.tsxに"Format"タブ追加（navLinks配列をlabelIdに変更して翻訳対応）
 
 ### 次のステップ
 
-1. **FormatPage翻訳対応**
-   - 翻訳ファイルにキーを追加（format.itemCount, format.apple, format.banana, format.orange）
-
-2. **Section 6実装・執筆**
-   - 変数・リッチテキストを含む翻訳実装
+1. **Section 6実装・執筆**
+   - 言語設定の保存と管理（localStorage + ブラウザ言語検出）
    - section06.md作成
+
+2. **Section 7実装・執筆**
+   - 変数・リッチテキストを含む翻訳実装
+   - section07.md作成（完了）
 
 ---
 
