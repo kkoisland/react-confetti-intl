@@ -137,7 +137,7 @@ src/components/LanguageSelector.tsx
 - 太字(<b>): 「React Confetti」（アプリ名を強調）
 - イタリック(<em>): 「react-confetti」（ライブラリ名を技術用語として）
 - リンク1(<a>): react-confetti → https://github.com/alampros/react-confetti
-- リンク2(<a>): View Source on GitHub → https://github.com/kkoisland/react-confetti-app
+- リンク2(<a>): View Source on GitHub → https://github.com/kkoisland/react-confetti-intl
 #3. useIntlを使った動的翻訳を実装
 - useIntlを使うためにToastPageを動的に書き直す
 - ToastPageの"All Completed!"をuseIntl.formatMessage()に変更
