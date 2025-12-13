@@ -30,8 +30,8 @@ const Layout = () => {
 		{ to: "/countdown", labelId: "nav.countdown" },
 		{ to: "/toast", labelId: "nav.toast" },
 		{ to: "/seasonal", labelId: "nav.seasonal" },
-		{ to: "/format", labelId: "nav.format" },
 		{ to: "/playground", labelId: "nav.playground" },
+		{ to: "/format", labelId: "nav.format" },
 	];
 
 	return (

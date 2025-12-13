@@ -1,4 +1,7 @@
 {
 	"basic.startButton": "Starta Konfetti",
-	"basic.stopButton": "Stoppa Konfetti"
+	"basic.stopButton": "Stoppa Konfetti",
+	"format.itemCount": "{count, plural, one {# artikel} other {# artiklar}}",
+	"format.gender": "{gender, select, male {Han gillade detta} female {Hon gillade detta} other {De gillade detta}}",
+	"format.position": "{position, selectordinal, one {#:a} other {#:e}} plats"
 }

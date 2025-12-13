@@ -1,4 +1,7 @@
 {
 	"basic.startButton": "开始彩纸",
-	"basic.stopButton": "停止彩纸"
+	"basic.stopButton": "停止彩纸",
+	"format.itemCount": "{count, plural, other {# 个项目}}",
+	"format.gender": "{gender, select, male {他喜欢这个} female {她喜欢这个} other {他们喜欢这个}}",
+	"format.position": "{position, selectordinal, other {第 # 名}}"
 }
