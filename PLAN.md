@@ -414,15 +414,25 @@ src/
     - format.gender（性別による表現の違いを表示）
     - format.position（序数の違いを表示）
   - App.tsxにルーティング追加
-  - Layout.tsxに"Format"タブ追加（navLinks配列をlabelIdに変更して翻訳対応）
+  - Layout.tsxに"Format"タブ追加
+- ✅ Section 6実装完了（言語設定の保存と管理）
+  - IntlProvider.tsxにロケール永続化ロジック追加
+  - localStorage読み込み（キー: react-confetti-intl:locale）
+  - ブラウザ言語検出（navigator.language）
+  - 優先順位実装（localStorage → ブラウザ言語 → デフォルト "en-US"）
+  - useEffectでlocale変更時にlocalStorageに保存
+  - SUPPORTED_LOCALESをmessagesから生成（Object.keys）して重複排除
+  - navLinksは静的ラベルのまま（翻訳対応は保留）
+- ✅ Section 6執筆完了（section06.md）
+  - 初期ロケール決定ロジックの説明
+  - localStorage特性の説明（ブラウザを閉じても保持、同一オリジン共有、プライベートモード制限）
+  - SUPPORTED_LOCALES.includesのチェック意図説明（セキュリティ/堅牢性）
+  - 動作確認手順の追加
+  - 他の選択肢（URL、Cookie、DB+API）の説明
 
 ### 次のステップ
 
-1. **Section 6実装・執筆**
-   - 言語設定の保存と管理（localStorage + ブラウザ言語検出）
-   - section06.md作成
-
-2. **Section 7実装・執筆**
+1. **Section 7実装・執筆**
    - 変数・リッチテキストを含む翻訳実装
    - section07.md作成（完了）
 

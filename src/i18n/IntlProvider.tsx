@@ -28,6 +28,8 @@ const messages: Record<Locale, Record<string, string>> = {
 	"nl-NL": nlNL,
 };
 
+const SUPPORTED_LOCALES = Object.keys(messages) as Locale[];
+
 interface LocaleContextValue {
 	locale: Locale;
 	setLocale: (locale: Locale) => void;
@@ -46,19 +48,6 @@ export const useLocaleContext = () => {
 interface IntlProviderProps {
 	children: ReactNode;
 }
-
-const SUPPORTED_LOCALES: Locale[] = [
-	"ja-JP",
-	"en-US",
-	"it-IT",
-	"de-DE",
-	"zh-CN",
-	"ko-KR",
-	"es-ES",
-	"fr-FR",
-	"sv-SE",
-	"nl-NL",
-];
 
 const getInitialLocale = (): Locale => {
 	// 1. Check localStorage
