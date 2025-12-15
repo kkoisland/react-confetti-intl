@@ -1,7 +1,7 @@
 {
-	"basic.startButton": "Start Confetti",
-	"basic.stopButton": "Stop Confetti",
-	"format.itemCount": "{count, plural, one {# artikel} other {# artikelen}}",
-	"format.gender": "{gender, select, male {Hij vond dit leuk} female {Zij vond dit leuk} other {Zij vonden dit leuk}}",
-	"format.position": "{position, selectordinal, other {#e}} plaats"
+	"51BEV2": "Start Confetti",
+	"B8MRsI": "{count, plural, one {# item} other {# items}}",
+	"JpmFYq": "Stop Confetti",
+	"OHEhHa": "{gender, select, male {He liked this} female {She liked this} other {They liked this}}",
+	"n8yUgb": "{position, selectordinal, one {#st} two {#nd} few {#rd} other {#th}} place"
 }

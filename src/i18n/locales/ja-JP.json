@@ -1,7 +1,7 @@
 {
-	"basic.startButton": "紙吹雪を開始",
-	"basic.stopButton": "紙吹雪を停止",
-	"format.itemCount": "{count, plural, other {# 個のアイテム}}",
-	"format.gender": "{gender, select, male {彼はこれが好きです} female {彼女はこれが好きです} other {この人はこれが好きです}}",
-	"format.position": "{position, selectordinal, other {第 # 位}}"
+	"51BEV2": "Start Confetti",
+	"B8MRsI": "{count, plural, one {# item} other {# items}}",
+	"JpmFYq": "Stop Confetti",
+	"OHEhHa": "{gender, select, male {He liked this} female {She liked this} other {They liked this}}",
+	"n8yUgb": "{position, selectordinal, one {#st} two {#nd} few {#rd} other {#th}} place"
 }

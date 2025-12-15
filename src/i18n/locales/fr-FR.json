@@ -1,7 +1,7 @@
 {
-	"basic.startButton": "Démarrer les Confettis",
-	"basic.stopButton": "Arrêter les Confettis",
-	"format.itemCount": "{count, plural, one {# article} other {# articles}}",
-	"format.gender": "{gender, select, male {Il a aimé cela} female {Elle a aimé cela} other {Ils ont aimé cela}}",
-	"format.position": "{position, selectordinal, one {#ère} other {#ème}} place"
+	"51BEV2": "Start Confetti",
+	"B8MRsI": "{count, plural, one {# item} other {# items}}",
+	"JpmFYq": "Stop Confetti",
+	"OHEhHa": "{gender, select, male {He liked this} female {She liked this} other {They liked this}}",
+	"n8yUgb": "{position, selectordinal, one {#st} two {#nd} few {#rd} other {#th}} place"
 }

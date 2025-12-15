@@ -4,5 +4,20 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-	plugins: [react(), tailwindcss()],
+	plugins: [
+		react({
+			babel: {
+				plugins: [
+					[
+						"formatjs",
+						{
+							idInterpolationPattern: "[sha512:contenthash:base64:6]",
+							ast: true,
+						},
+					],
+				],
+			},
+		}),
+		tailwindcss(),
+	],
 });

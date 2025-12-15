@@ -280,7 +280,7 @@ const FormatPage = () => {
 				<div className="grid grid-cols-2 gap-4">
 					<div>
 						<FormattedMessage
-							id="format.itemCount"
+							id="B8MRsI"
 							defaultMessage="{count, plural, one {# item} other {# items}}"
 							values={{ count: 0 }}
 						/>
@@ -290,7 +290,7 @@ const FormatPage = () => {
 				<div className="grid grid-cols-2 gap-4">
 					<div>
 						<FormattedMessage
-							id="format.itemCount"
+							id="B8MRsI"
 							defaultMessage="{count, plural, one {# item} other {# items}}"
 							values={{ count: 1 }}
 						/>
@@ -300,7 +300,7 @@ const FormatPage = () => {
 				<div className="grid grid-cols-2 gap-4">
 					<div>
 						<FormattedMessage
-							id="format.itemCount"
+							id="B8MRsI"
 							defaultMessage="{count, plural, one {# item} other {# items}}"
 							values={{ count: itemCount }}
 						/>
@@ -323,7 +323,7 @@ const FormatPage = () => {
 				<div className="grid grid-cols-2 gap-4">
 					<div>
 						<FormattedMessage
-							id="format.gender"
+							id="OHEhHa"
 							defaultMessage="{gender, select, male {He liked this} female {She liked this} other {They liked this}}"
 							values={{ gender: "male" }}
 						/>
@@ -333,7 +333,7 @@ const FormatPage = () => {
 				<div className="grid grid-cols-2 gap-4">
 					<div>
 						<FormattedMessage
-							id="format.gender"
+							id="OHEhHa"
 							defaultMessage="{gender, select, male {He liked this} female {She liked this} other {They liked this}}"
 							values={{ gender: "female" }}
 						/>
@@ -343,7 +343,7 @@ const FormatPage = () => {
 				<div className="grid grid-cols-2 gap-4">
 					<div>
 						<FormattedMessage
-							id="format.gender"
+							id="OHEhHa"
 							defaultMessage="{gender, select, male {He liked this} female {She liked this} other {They liked this}}"
 							values={{ gender: "other" }}
 						/>
@@ -366,7 +366,7 @@ const FormatPage = () => {
 				<div className="grid grid-cols-2 gap-4">
 					<div>
 						<FormattedMessage
-							id="format.position"
+							id="n8yUgb"
 							defaultMessage="{position, selectordinal, one {#st} two {#nd} few {#rd} other {#th}} place"
 							values={{ position: 1 }}
 						/>
@@ -376,7 +376,7 @@ const FormatPage = () => {
 				<div className="grid grid-cols-2 gap-4">
 					<div>
 						<FormattedMessage
-							id="format.position"
+							id="n8yUgb"
 							defaultMessage="{position, selectordinal, one {#st} two {#nd} few {#rd} other {#th}} place"
 							values={{ position }}
 						/>
@@ -386,7 +386,7 @@ const FormatPage = () => {
 				<div className="grid grid-cols-2 gap-4">
 					<div>
 						<FormattedMessage
-							id="format.position"
+							id="n8yUgb"
 							defaultMessage="{position, selectordinal, one {#st} two {#nd} few {#rd} other {#th}} place"
 							values={{ position: 3 }}
 						/>
