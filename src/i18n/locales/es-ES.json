@@ -1,7 +1,1 @@
-{
-	"basic.startButton": "Iniciar Confeti",
-	"basic.stopButton": "Detener Confeti",
-	"format.itemCount": "{count, plural, one {# artículo} other {# artículos}}",
-	"format.gender": "{gender, select, male {Le gustó esto} female {Le gustó esto} other {Les gustó esto}}",
-	"format.position": "{position, selectordinal, other {#º}} lugar"
-}
+{}

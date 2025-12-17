@@ -1,7 +1,1 @@
-{
-	"basic.startButton": "Avvia Coriandoli",
-	"basic.stopButton": "Ferma Coriandoli",
-	"format.itemCount": "{count, plural, one {# articolo} other {# articoli}}",
-	"format.gender": "{gender, select, male {Gli è piaciuto} female {Le è piaciuto} other {Gli è piaciuto}}",
-	"format.position": "{position, selectordinal, other {#º}} posto"
-}
+{}
