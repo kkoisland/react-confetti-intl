@@ -1,7 +1,1 @@
-{
-	"basic.startButton": "Démarrer les Confettis",
-	"basic.stopButton": "Arrêter les Confettis",
-	"format.itemCount": "{count, plural, one {# article} other {# articles}}",
-	"format.gender": "{gender, select, male {Il a aimé cela} female {Elle a aimé cela} other {Ils ont aimé cela}}",
-	"format.position": "{position, selectordinal, one {#ère} other {#ème}} place"
-}
+{}

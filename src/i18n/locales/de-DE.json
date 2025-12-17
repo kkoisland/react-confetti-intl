@@ -1,7 +1,1 @@
-{
-	"basic.startButton": "Konfetti starten",
-	"basic.stopButton": "Konfetti stoppen",
-	"format.itemCount": "{count, plural, one {# Artikel} other {# Artikel}}",
-	"format.gender": "{gender, select, male {Er mochte das} female {Sie mochte das} other {Sie mochten das}}",
-	"format.position": "{position, selectordinal, other {#.}} Platz"
-}
+{}
