@@ -2,7 +2,7 @@ import { useState } from "react";
 import Confetti from "react-confetti";
 import { FormattedMessage, useIntl } from "react-intl";
 import { NAV_HOVER_STYLES } from "../Layout";
-import { themes } from "./SeasonalPage";
+import { THEME_STG, themes } from "./SeasonalPage";
 
 const DEFAULT_VALUES = {
 	numberOfPieces: 200,
@@ -464,7 +464,8 @@ const PlaygroundPage = () => {
 								onClick={() => handlePreset(index)}
 								className="px-2 py-1 text-base bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded border border-gray-300 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
 							>
-								{theme.emoji} {theme.name}
+								{theme.emoji}{" "}
+								{THEME_STG[theme.id as keyof typeof THEME_STG].name}
 							</button>
 						))}
 					</div>

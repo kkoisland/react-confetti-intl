@@ -78,11 +78,11 @@ const CountdownPage = () => {
 			</div>
 			<div className="text-xl font-bold h-8">
 				{count === 0 &&
-				intl.formatMessage({
-					id: "countdown.completeMessage",
-					defaultMessage: "🎉 Countdown complete!",
-					description: "メッセージ：カウントダウン完了時に表示",
-				})}
+					intl.formatMessage({
+						id: "countdown.completeMessage",
+						defaultMessage: "🎉 Countdown complete!",
+						description: "メッセージ：カウントダウン完了時に表示",
+					})}
 			</div>
 		</div>
 	);
