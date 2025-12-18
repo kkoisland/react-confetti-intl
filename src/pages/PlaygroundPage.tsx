@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Confetti from "react-confetti";
+import { FormattedMessage, useIntl } from "react-intl";
 import { NAV_HOVER_STYLES } from "../Layout";
 import { themes } from "./SeasonalPage";
 
@@ -25,6 +26,7 @@ type ParameterSliderProps = {
 	step: number;
 	onChange: (value: number) => void;
 	onReset: () => void;
+	resetTooltip: string;
 };
 
 const ParameterSlider = ({
@@ -37,7 +39,9 @@ const ParameterSlider = ({
 	step,
 	onChange,
 	onReset,
+	resetTooltip,
 }: ParameterSliderProps) => {
+	const intl = useIntl();
 	return (
 		<div className="flex-1">
 			<div className="flex items-center mb-1">
@@ -45,7 +49,15 @@ const ParameterSlider = ({
 					htmlFor={id}
 					className="text-base font-medium text-gray-700 dark:text-gray-300"
 				>
-					{label}: {value} (default: {defaultValue})
+					{label}: {value}{" "}
+					{intl.formatMessage(
+						{
+							id: "playground.defaultValue",
+							defaultMessage: "(default: {defaultValue})",
+							description: "スライダーのデフォルト値表示",
+						},
+						{ defaultValue },
+					)}
 				</label>
 				<button
 					type="button"
@@ -54,7 +66,7 @@ const ParameterSlider = ({
 						onReset();
 					}}
 					className={`ml-2 text-sm px-1.5 py-0.5 rounded ${NAV_HOVER_STYLES}`}
-					title="Reset to default"
+					title={resetTooltip}
 				>
 					↺
 				</button>
@@ -76,6 +88,7 @@ const ParameterSlider = ({
 };
 
 const PlaygroundPage = () => {
+	const intl = useIntl();
 	console.log(themes);
 	const [numberOfPieces, setNumberOfPieces] = useState(200);
 	const [gravity, setGravity] = useState(0.1);
@@ -213,6 +226,12 @@ const PlaygroundPage = () => {
 		restartConfetti();
 	};
 
+	const resetTooltip = intl.formatMessage({
+		id: "playground.resetTooltip",
+		defaultMessage: "Reset to default",
+		description: "ツールチップ：デフォルト値にリセット",
+	});
+
 	return (
 		<div className="flex flex-col h-full">
 			{/* Controls */}
@@ -221,7 +240,11 @@ const PlaygroundPage = () => {
 				<div className="flex gap-3 mb-3">
 					<ParameterSlider
 						id="numberOfPieces"
-						label="Number of Pieces"
+						label={intl.formatMessage({
+							id: "playground.numberOfPieces",
+							defaultMessage: "Number of Pieces",
+							description: "スライダー：紙吹雪の数",
+						})}
 						value={numberOfPieces}
 						defaultValue={DEFAULT_VALUES.numberOfPieces}
 						min={50}
@@ -229,10 +252,15 @@ const PlaygroundPage = () => {
 						step={10}
 						onChange={setNumberOfPieces}
 						onReset={restartConfetti}
+						resetTooltip={resetTooltip}
 					/>
 					<ParameterSlider
 						id="gravity"
-						label="Gravity"
+						label={intl.formatMessage({
+							id: "playground.gravity",
+							defaultMessage: "Gravity",
+							description: "スライダー：重力",
+						})}
 						value={gravity}
 						defaultValue={DEFAULT_VALUES.gravity}
 						min={0}
@@ -240,10 +268,15 @@ const PlaygroundPage = () => {
 						step={0.001}
 						onChange={setGravity}
 						onReset={restartConfetti}
+						resetTooltip={resetTooltip}
 					/>
 					<ParameterSlider
 						id="wind"
-						label="Wind"
+						label={intl.formatMessage({
+							id: "playground.wind",
+							defaultMessage: "Wind",
+							description: "スライダー：風",
+						})}
 						value={wind}
 						defaultValue={DEFAULT_VALUES.wind}
 						min={-0.1}
@@ -251,13 +284,18 @@ const PlaygroundPage = () => {
 						step={0.01}
 						onChange={setWind}
 						onReset={restartConfetti}
+						resetTooltip={resetTooltip}
 					/>
 				</div>
 				{/* Row 2: 2 sliders */}
 				<div className="flex gap-3 mb-3">
 					<ParameterSlider
 						id="initialVelocityX"
-						label="Initial Velocity X"
+						label={intl.formatMessage({
+							id: "playground.initialVelocityX",
+							defaultMessage: "Initial Velocity X",
+							description: "スライダー：初期速度X",
+						})}
 						value={initialVelocityX}
 						defaultValue={DEFAULT_VALUES.initialVelocityX}
 						min={-10}
@@ -265,10 +303,15 @@ const PlaygroundPage = () => {
 						step={1}
 						onChange={setInitialVelocityX}
 						onReset={restartConfetti}
+						resetTooltip={resetTooltip}
 					/>
 					<ParameterSlider
 						id="initialVelocityY"
-						label="Initial Velocity Y"
+						label={intl.formatMessage({
+							id: "playground.initialVelocityY",
+							defaultMessage: "Initial Velocity Y",
+							description: "スライダー：初期速度Y",
+						})}
 						value={initialVelocityY}
 						defaultValue={DEFAULT_VALUES.initialVelocityY}
 						min={-20}
@@ -276,6 +319,7 @@ const PlaygroundPage = () => {
 						step={1}
 						onChange={setInitialVelocityY}
 						onReset={restartConfetti}
+						resetTooltip={resetTooltip}
 					/>
 				</div>
 
@@ -283,7 +327,11 @@ const PlaygroundPage = () => {
 				<div className="flex gap-3 mb-3">
 					<ParameterSlider
 						id="friction"
-						label="Friction"
+						label={intl.formatMessage({
+							id: "playground.friction",
+							defaultMessage: "Friction",
+							description: "スライダー：摩擦",
+						})}
 						value={friction}
 						defaultValue={DEFAULT_VALUES.friction}
 						min={0.9}
@@ -291,10 +339,15 @@ const PlaygroundPage = () => {
 						step={0.01}
 						onChange={setFriction}
 						onReset={restartConfetti}
+						resetTooltip={resetTooltip}
 					/>
 					<ParameterSlider
 						id="opacity"
-						label="Opacity"
+						label={intl.formatMessage({
+							id: "playground.opacity",
+							defaultMessage: "Opacity",
+							description: "スライダー：不透明度",
+						})}
 						value={opacity}
 						defaultValue={DEFAULT_VALUES.opacity}
 						min={0}
@@ -302,13 +355,18 @@ const PlaygroundPage = () => {
 						step={0.1}
 						onChange={setOpacity}
 						onReset={restartConfetti}
+						resetTooltip={resetTooltip}
 					/>
 				</div>
 				{/* Row 4: Colors */}
 				<div className="mb-3">
 					<div className="mb-2">
 						<div className="block text-base font-medium mb-1 text-gray-700 dark:text-gray-300">
-							Colors:
+							<FormattedMessage
+								id="playground.colorsLabel"
+								defaultMessage="Colors:"
+								description="ラベル：色設定セクション"
+							/>
 						</div>
 						<div className="flex gap-3">
 							<div className="flex items-center">
@@ -324,7 +382,11 @@ const PlaygroundPage = () => {
 									htmlFor="defaultColors"
 									className="text-base text-gray-700 dark:text-gray-300"
 								>
-									Use default colors (17 colors)
+									<FormattedMessage
+										id="playground.defaultColors"
+										defaultMessage="Use default colors (17 colors)"
+										description="ラジオボタン：デフォルトの色を使用"
+									/>
 								</label>
 							</div>
 
@@ -341,7 +403,11 @@ const PlaygroundPage = () => {
 									htmlFor="customColors"
 									className="text-base text-gray-700 dark:text-gray-300"
 								>
-									Custom colors (up to 5)
+									<FormattedMessage
+										id="playground.customColors"
+										defaultMessage="Custom colors (up to 5)"
+										description="ラジオボタン：カスタムカラーを使用"
+									/>
 								</label>
 							</div>
 						</div>
@@ -384,7 +450,11 @@ const PlaygroundPage = () => {
 				{/* Row 5: Preset buttons */}
 				<div className="mb-3">
 					<div className="block text-base font-medium mb-1 text-gray-700 dark:text-gray-300">
-						Preset Themes:
+						<FormattedMessage
+							id="playground.presetThemes"
+							defaultMessage="Preset Themes:"
+							description="ラベル：プリセットテーマセクション"
+						/>
 					</div>
 					<div className="flex flex-wrap gap-1.5">
 						{themes.map((theme, index) => (
@@ -407,28 +477,50 @@ const PlaygroundPage = () => {
 						onClick={() => setShowConfetti(!showConfetti)}
 						className="px-3 py-1 text-md bg-gradient-to-r from-blue-200 to-purple-300 hover:from-blue-400 hover:to-purple-500 text-gray-800 hover:text-white rounded font-semibold transition-all"
 					>
-						{showConfetti ? "Stop Confetti" : "Start Confetti"}
+						{showConfetti
+							? intl.formatMessage({
+									id: "playground.stopButton",
+									defaultMessage: "Stop Confetti",
+									description: "ボタン：紙吹雪を停止",
+								})
+							: intl.formatMessage({
+									id: "playground.startButton",
+									defaultMessage: "Start Confetti",
+									description: "ボタン：紙吹雪を開始",
+								})}
 					</button>
 					<button
 						type="button"
 						onClick={handleResetColors}
 						className="px-3 py-1 text-md bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-all"
 					>
-						Reset Colors
+						<FormattedMessage
+							id="playground.resetColorsButton"
+							defaultMessage="Reset Colors"
+							description="ボタン：色をリセット"
+						/>
 					</button>
 					<button
 						type="button"
 						onClick={handleResetParameters}
 						className="px-3 py-1 text-md bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-all"
 					>
-						Reset Sliders
+						<FormattedMessage
+							id="playground.resetSlidersButton"
+							defaultMessage="Reset Sliders"
+							description="ボタン：スライダーをリセット"
+						/>
 					</button>
 					<button
 						type="button"
 						onClick={handleResetAll}
 						className="px-3 py-1 text-md bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-all"
 					>
-						Reset All
+						<FormattedMessage
+							id="playground.resetAllButton"
+							defaultMessage="Reset All"
+							description="ボタン：すべてをリセット"
+						/>
 					</button>
 				</div>
 			</div>
@@ -458,7 +550,11 @@ const PlaygroundPage = () => {
 								onClick={() => setShowAllParameters(false)}
 								className="px-3 py-1 text-xs bg-gradient-to-r from-blue-200 to-purple-300 hover:from-blue-400 hover:to-purple-500 text-gray-800 hover:text-white font-semibold rounded transition-all whitespace-nowrap"
 							>
-								Changes Only
+								<FormattedMessage
+									id="playground.changesOnlyButton"
+									defaultMessage="Changes Only"
+									description="ボタン：変更されたパラメータのみ表示"
+								/>
 							</button>
 						) : (
 							<button
@@ -466,7 +562,11 @@ const PlaygroundPage = () => {
 								onClick={() => setShowAllParameters(true)}
 								className="px-3 py-1 text-xs bg-gradient-to-r from-blue-200 to-purple-300 hover:from-blue-400 hover:to-purple-500 text-gray-800 hover:text-white font-semibold rounded transition-all whitespace-nowrap"
 							>
-								Show All
+								<FormattedMessage
+									id="playground.showAllButton"
+									defaultMessage="Show All"
+									description="ボタン：すべてのパラメータを表示"
+								/>
 							</button>
 						)}
 						<button
@@ -474,7 +574,14 @@ const PlaygroundPage = () => {
 							onClick={handleCopyCode}
 							className="w-20 px-2 py-1 text-xs bg-gradient-to-r from-blue-200 to-purple-300 hover:from-blue-400 hover:to-purple-500 text-gray-800 hover:text-white font-semibold rounded transition-all whitespace-nowrap"
 						>
-							{copied ? "Copied!" : "Copy Code"}
+							{copied
+								? "✔︎"
+								: intl.formatMessage({
+										id: "playground.copyCodeButton",
+										defaultMessage: "Copy Code",
+										description:
+											"ボタン：UI制約あり：最大9文字。短縮必須。意味優先。",
+									})}
 						</button>
 					</div>
 
