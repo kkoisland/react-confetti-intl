@@ -3,12 +3,47 @@ import Confetti from "react-confetti";
 
 const THEME_SWITCH_DELAY = 100;
 
+export const THEME_STG = {
+	sakura: {
+		name: "Sakura",
+		description: "Cherry blossom petals gently swirl and flutter in the breeze",
+	},
+	snow: {
+		name: "Snow",
+		description: "Snowflakes softly fall straight down (dark mode recommended)",
+	},
+	koyo: {
+		name: "Autumn",
+		description: "Autumn leaves dance and swirl in the wind",
+	},
+	star: {
+		name: "Star",
+		description:
+			"Gold, silver, and sand shimmer and gently float (dark mode recommended)",
+	},
+	christmas: {
+		name: "Christmas",
+		description: "Festive confetti bursts and spreads in celebration",
+	},
+};
+
+const UI_TEXT = {
+	stopButton: "Stop Confetti",
+	themeLabel: "Theme:",
+	colorsLabel: "Colors:",
+	piecesLabel: "Pieces:",
+	gravityLabel: "Gravity:",
+	windLabel: "Wind:",
+	initialVelocityYLabel: "InitialVelocityY:",
+	initialVelocityXLabel: "InitialVelocityX:",
+	copiedButton: "Copied!",
+	copyCodeButton: "Copy Code",
+};
+
 export const themes = [
 	{
 		id: "sakura",
-		name: "Sakura",
 		emoji: "🌸",
-		description: "Cherry blossom petals gently swirl and flutter in the breeze",
 		colors: ["#FFB7C5", "#FFC0CB"],
 		numberOfPieces: 100,
 		gravity: 0.02,
@@ -17,9 +52,7 @@ export const themes = [
 	},
 	{
 		id: "snow",
-		name: "Snow",
 		emoji: "❄️",
-		description: "Snowflakes softly fall straight down (dark mode recommended)",
 		colors: ["#FFFFFF", "#E0F2F7"],
 		numberOfPieces: 300,
 		gravity: 0.01,
@@ -27,9 +60,7 @@ export const themes = [
 	},
 	{
 		id: "koyo",
-		name: "Autumn",
 		emoji: "🍁",
-		description: "Autumn leaves dance and swirl in the wind",
 		colors: ["#FF6347", "#FFA500"],
 		numberOfPieces: 200,
 		gravity: 0.08,
@@ -37,10 +68,7 @@ export const themes = [
 	},
 	{
 		id: "star",
-		name: "Star",
 		emoji: "✨",
-		description:
-			"Gold, silver, and sand shimmer and gently float (dark mode recommended)",
 		colors: ["#DAA520", "#E8E8E8", "#E6BE8A"],
 		numberOfPieces: 150,
 		gravity: 0.0005,
@@ -48,9 +76,7 @@ export const themes = [
 	},
 	{
 		id: "christmas",
-		name: "Christmas",
 		emoji: "🎄",
-		description: "Festive confetti bursts and spreads in celebration",
 		colors: ["#FF0000", "#00FF00", "#DAA520", "#4169E1"],
 		numberOfPieces: 500,
 		gravity: 0.06,
@@ -74,18 +100,14 @@ const SeasonalPage = () => {
     colors={${JSON.stringify(currentTheme.colors)}}
     numberOfPieces={${currentTheme.numberOfPieces}}
     gravity={${currentTheme.gravity}}${
-			currentTheme.wind !== undefined
-				? `\n  
-  wind={${currentTheme.wind}}`
-				: ""
+			currentTheme.wind !== undefined ? `\n    wind={${currentTheme.wind}}` : ""
 		}${
 			currentTheme.initialVelocityY !== undefined
-				? `\n  
-  initialVelocityY={${currentTheme.initialVelocityY}}`
+				? `\n    initialVelocityY={${currentTheme.initialVelocityY}}`
 				: ""
 		}${
 			currentTheme.initialVelocityX !== undefined
-				? `\n  initialVelocityX={${currentTheme.initialVelocityX}}`
+				? `\n    initialVelocityX={${currentTheme.initialVelocityX}}`
 				: ""
 		}
   />`;
@@ -119,7 +141,7 @@ const SeasonalPage = () => {
 									: "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600"
 							}`}
 						>
-							{t.emoji} {t.name}
+							{t.emoji} {THEME_STG[t.id as keyof typeof THEME_STG].name}
 						</button>
 					);
 				})}
@@ -127,7 +149,7 @@ const SeasonalPage = () => {
 			{/* Description */}
 			{currentTheme && (
 				<p className="text-xl text-gray-600 dark:text-gray-400">
-					{currentTheme.description}
+					{THEME_STG[currentTheme.id as keyof typeof THEME_STG].description}
 				</p>
 			)}
 
@@ -137,7 +159,7 @@ const SeasonalPage = () => {
 					onClick={() => setShowConfetti(false)}
 					className="px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl"
 				>
-					Stop Confetti
+					{UI_TEXT.stopButton}
 				</button>
 			)}
 
@@ -159,36 +181,40 @@ const SeasonalPage = () => {
 					<div className="flex items-start justify-between gap-4">
 						<div className="flex flex-col gap-2 text-sm text-gray-600 dark:text-gray-400">
 							<div>
-								<span className="font-semibold">Theme:</span>{" "}
-								{currentTheme.name}
+								<span className="font-semibold">{UI_TEXT.themeLabel}</span>{" "}
+								{THEME_STG[currentTheme.id as keyof typeof THEME_STG].name}
 							</div>
 							<div>
-								<span className="font-semibold">Colors:</span>{" "}
+								<span className="font-semibold">{UI_TEXT.colorsLabel}</span>{" "}
 								{currentTheme.colors.join(", ")}
 							</div>
 							<div>
-								<span className="font-semibold">Pieces:</span>{" "}
+								<span className="font-semibold">{UI_TEXT.piecesLabel}</span>{" "}
 								{currentTheme.numberOfPieces}
 							</div>
 							<div>
-								<span className="font-semibold">Gravity:</span>{" "}
+								<span className="font-semibold">{UI_TEXT.gravityLabel}</span>{" "}
 								{currentTheme.gravity}
 							</div>
 							{currentTheme.wind !== undefined && (
 								<div>
-									<span className="font-semibold">Wind:</span>{" "}
+									<span className="font-semibold">{UI_TEXT.windLabel}</span>{" "}
 									{currentTheme.wind}
 								</div>
 							)}
 							{currentTheme.initialVelocityY !== undefined && (
 								<div>
-									<span className="font-semibold">InitialVelocityY:</span>{" "}
+									<span className="font-semibold">
+										{UI_TEXT.initialVelocityYLabel}
+									</span>{" "}
 									{currentTheme.initialVelocityY}
 								</div>
 							)}
 							{currentTheme.initialVelocityX !== undefined && (
 								<div>
-									<span className="font-semibold">InitialVelocityX:</span>{" "}
+									<span className="font-semibold">
+										{UI_TEXT.initialVelocityXLabel}
+									</span>{" "}
 									{currentTheme.initialVelocityX}
 								</div>
 							)}
@@ -198,7 +224,7 @@ const SeasonalPage = () => {
 							onClick={handleCopyCode}
 							className="w-20 px-2 py-1 text-xs bg-gradient-to-r from-orange-100 to-pink-200 text-gray-800 font-semibold rounded hover:from-orange-200 hover:to-pink-300 transition-all whitespace-nowrap"
 						>
-							{copied ? "Copied!" : "Copy Code"}
+							{copied ? UI_TEXT.copiedButton : UI_TEXT.copyCodeButton}
 						</button>
 					</div>
 				</div>
