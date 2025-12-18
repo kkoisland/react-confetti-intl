@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
+import { FormattedMessage, useIntl } from "react-intl";
 
 const INITIAL_TIME = 3;
 const COUNTDOWN_INTERVAL = 1000;
 const CONFETTI_DURATION = 7000;
 
 const CountdownPage = () => {
+	const intl = useIntl();
 	const [count, setCount] = useState(INITIAL_TIME);
 	const [isRunning, setIsRunning] = useState(false);
 	const [showConfetti, setShowConfetti] = useState(false);
@@ -52,7 +54,11 @@ const CountdownPage = () => {
 					disabled={isRunning}
 					className="px-6 py-3 bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-300 hover:from-pink-400 hover:via-purple-400 hover:to-indigo-400 text-gray-800 hover:text-white font-semibold rounded-lg transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
 				>
-					Start
+					<FormattedMessage
+						id="countdown.startButton"
+						defaultMessage="Start"
+						description="ボタン：カウントダウンを開始"
+					/>
 				</button>
 				<button
 					type="button"
@@ -63,11 +69,20 @@ const CountdownPage = () => {
 					}}
 					className="px-6 py-3 bg-gradient-to-br from-gray-200 to-gray-300 hover:from-gray-300 hover:to-gray-400 text-gray-800 hover:text-white font-semibold rounded-lg transition-all shadow-lg hover:shadow-xl"
 				>
-					Reset
+					<FormattedMessage
+						id="countdown.resetButton"
+						defaultMessage="Reset"
+						description="ボタン：カウントダウンをリセット"
+					/>
 				</button>
 			</div>
 			<div className="text-xl font-bold h-8">
-				{count === 0 && "🎉 Countdown complete!"}
+				{count === 0 &&
+				intl.formatMessage({
+					id: "countdown.completeMessage",
+					defaultMessage: "🎉 Countdown complete!",
+					description: "メッセージ：カウントダウン完了時に表示",
+				})}
 			</div>
 		</div>
 	);

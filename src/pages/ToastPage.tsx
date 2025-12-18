@@ -1,13 +1,39 @@
 import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
+import { FormattedMessage, useIntl } from "react-intl";
 
 const TOAST_DURATION = 5000;
 
 const ToastPage = () => {
+	const intl = useIntl();
 	const [tasks, setTasks] = useState([
-		{ id: 1, text: "Task 1", completed: false },
-		{ id: 2, text: "Task 2", completed: false },
-		{ id: 3, text: "Task 3", completed: false },
+		{
+			id: 1,
+			text: intl.formatMessage({
+				id: "toast.task1",
+				defaultMessage: "Task 1",
+				description: "タスク1のラベル",
+			}),
+			completed: false,
+		},
+		{
+			id: 2,
+			text: intl.formatMessage({
+				id: "toast.task2",
+				defaultMessage: "Task 2",
+				description: "タスク2のラベル",
+			}),
+			completed: false,
+		},
+		{
+			id: 3,
+			text: intl.formatMessage({
+				id: "toast.task3",
+				defaultMessage: "Task 3",
+				description: "タスク3のラベル",
+			}),
+			completed: false,
+		},
 	]);
 	const [showConfetti, setShowConfetti] = useState(false);
 	const [showToast, setShowToast] = useState(false);
@@ -60,7 +86,11 @@ const ToastPage = () => {
 			{showConfetti && <Confetti />}
 			{showToast && (
 				<div className="fixed top-4 left-1/2 -translate-x-1/2 bg-green-400 text-white px-6 py-3 rounded-lg shadow-lg z-50">
-					All Completed!
+					<FormattedMessage
+						id="toast.completeMessage"
+						defaultMessage="All Completed!"
+						description="メッセージ：全タスク完了時に表示"
+					/>
 				</div>
 			)}
 		</div>
