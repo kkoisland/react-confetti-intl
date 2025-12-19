@@ -1,43 +1,124 @@
 import { useState } from "react";
 import Confetti from "react-confetti";
+import { defineMessages, useIntl } from "react-intl";
 
 const THEME_SWITCH_DELAY = 100;
 
-export const THEME_STG = {
-	sakura: {
-		name: "Sakura",
-		description: "Cherry blossom petals gently swirl and flutter in the breeze",
+export const themeMessages = defineMessages({
+	sakuraName: {
+		id: "seasonal.theme.sakura.name",
+		defaultMessage: "Sakura",
+		description: "テーマ名：桜",
 	},
-	snow: {
-		name: "Snow",
-		description: "Snowflakes softly fall straight down (dark mode recommended)",
+	sakuraDescription: {
+		id: "seasonal.theme.sakura.description",
+		defaultMessage:
+			"Cherry blossom petals gently swirl and flutter in the breeze",
+		description: "テーマ説明：桜の花びらが風に舞う様子",
 	},
-	koyo: {
-		name: "Autumn",
-		description: "Autumn leaves dance and swirl in the wind",
+	snowName: {
+		id: "seasonal.theme.snow.name",
+		defaultMessage: "Snow",
+		description: "テーマ名：雪",
 	},
-	star: {
-		name: "Star",
-		description:
+	snowDescription: {
+		id: "seasonal.theme.snow.description",
+		defaultMessage:
+			"Snowflakes softly fall and scatter downward (dark mode recommended)",
+		description: "テーマ説明：雪が静かに降る様子",
+	},
+	koyoName: {
+		id: "seasonal.theme.koyo.name",
+		defaultMessage: "Autumn",
+		description: "テーマ名：紅葉",
+	},
+	koyoDescription: {
+		id: "seasonal.theme.koyo.description",
+		defaultMessage: "Autumn leaves dance and swirl in the wind",
+		description: "テーマ説明：紅葉が風に舞う様子",
+	},
+	starName: {
+		id: "seasonal.theme.star.name",
+		defaultMessage: "Star",
+		description: "テーマ名：星",
+	},
+	starDescription: {
+		id: "seasonal.theme.star.description",
+		defaultMessage:
 			"Gold, silver, and sand shimmer and gently float (dark mode recommended)",
+		description: "テーマ説明：金銀砂がきらめく様子",
 	},
-	christmas: {
-		name: "Christmas",
-		description: "Festive confetti bursts and spreads in celebration",
+	christmasName: {
+		id: "seasonal.theme.christmas.name",
+		defaultMessage: "Christmas",
+		description: "テーマ名：クリスマス",
 	},
-};
+	christmasDescription: {
+		id: "seasonal.theme.christmas.description",
+		defaultMessage: "Festive confetti bursts and spreads in Christmas colors",
+		description: "テーマ説明：クリスマスの紙吹雪が弾ける様子",
+	},
+});
 
-const UI_TEXT = {
-	stopButton: "Stop Confetti",
-	themeLabel: "Theme:",
-	colorsLabel: "Colors:",
-	piecesLabel: "Pieces:",
-	gravityLabel: "Gravity:",
-	windLabel: "Wind:",
-	initialVelocityYLabel: "InitialVelocityY:",
-	initialVelocityXLabel: "InitialVelocityX:",
-	copiedButton: "Copied!",
-	copyCodeButton: "Copy Code",
+const UI_TEXT = defineMessages({
+	stopButton: {
+		id: "seasonal.stopButton",
+		defaultMessage: "Stop Confetti",
+		description: "ボタン：紙吹雪を停止",
+	},
+	themeLabel: {
+		id: "seasonal.themeLabel",
+		defaultMessage: "Theme:",
+		description: "ラベル：テーマ名表示",
+	},
+	colorsLabel: {
+		id: "seasonal.colorsLabel",
+		defaultMessage: "Colors:",
+		description: "ラベル：カラー表示",
+	},
+	piecesLabel: {
+		id: "seasonal.piecesLabel",
+		defaultMessage: "Pieces:",
+		description: "ラベル：紙吹雪の個数表示",
+	},
+	gravityLabel: {
+		id: "seasonal.gravityLabel",
+		defaultMessage: "Gravity:",
+		description: "ラベル：重力パラメータ表示",
+	},
+	windLabel: {
+		id: "seasonal.windLabel",
+		defaultMessage: "Wind:",
+		description: "ラベル：風パラメータ表示",
+	},
+	initialVelocityYLabel: {
+		id: "seasonal.initialVelocityYLabel",
+		defaultMessage: "InitialVelocityY:",
+		description: "ラベル：Y軸初速パラメータ表示",
+	},
+	initialVelocityXLabel: {
+		id: "seasonal.initialVelocityXLabel",
+		defaultMessage: "InitialVelocityX:",
+		description: "ラベル：X軸初速パラメータ表示",
+	},
+	copiedButton: {
+		id: "seasonal.copiedButton",
+		defaultMessage: "Copied!",
+		description: "ボタン：コピー完了状態",
+	},
+	copyCodeButton: {
+		id: "seasonal.copyCodeButton",
+		defaultMessage: "Copy Code",
+		description: "ボタン：UI制約あり：最大9文字。短縮必須。意味優先。",
+	},
+});
+
+export const THEME_STG = {
+	sakura: { id: "sakura" },
+	snow: { id: "snow" },
+	koyo: { id: "koyo" },
+	star: { id: "star" },
+	christmas: { id: "christmas" },
 };
 
 export const themes = [
@@ -85,6 +166,7 @@ export const themes = [
 ];
 
 const SeasonalPage = () => {
+	const intl = useIntl();
 	const [selectedThemeIndex, setSelectedThemeIndex] = useState<number | null>(
 		null,
 	);
@@ -141,7 +223,16 @@ const SeasonalPage = () => {
 									: "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600"
 							}`}
 						>
-							{t.emoji} {THEME_STG[t.id as keyof typeof THEME_STG].name}
+							{t.emoji}{" "}
+							{intl.formatMessage(
+								{
+									sakura: themeMessages.sakuraName,
+									snow: themeMessages.snowName,
+									koyo: themeMessages.koyoName,
+									star: themeMessages.starName,
+									christmas: themeMessages.christmasName,
+								}[t.id as keyof typeof THEME_STG],
+							)}
 						</button>
 					);
 				})}
@@ -149,7 +240,15 @@ const SeasonalPage = () => {
 			{/* Description */}
 			{currentTheme && (
 				<p className="text-xl text-gray-600 dark:text-gray-400">
-					{THEME_STG[currentTheme.id as keyof typeof THEME_STG].description}
+					{intl.formatMessage(
+						{
+							sakura: themeMessages.sakuraDescription,
+							snow: themeMessages.snowDescription,
+							koyo: themeMessages.koyoDescription,
+							star: themeMessages.starDescription,
+							christmas: themeMessages.christmasDescription,
+						}[currentTheme.id as keyof typeof THEME_STG],
+					)}
 				</p>
 			)}
 
@@ -159,7 +258,7 @@ const SeasonalPage = () => {
 					onClick={() => setShowConfetti(false)}
 					className="px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl"
 				>
-					{UI_TEXT.stopButton}
+					{intl.formatMessage(UI_TEXT.stopButton)}
 				</button>
 			)}
 
@@ -181,31 +280,49 @@ const SeasonalPage = () => {
 					<div className="flex items-start justify-between gap-4">
 						<div className="flex flex-col gap-2 text-sm text-gray-600 dark:text-gray-400">
 							<div>
-								<span className="font-semibold">{UI_TEXT.themeLabel}</span>{" "}
-								{THEME_STG[currentTheme.id as keyof typeof THEME_STG].name}
+								<span className="font-semibold">
+									{intl.formatMessage(UI_TEXT.themeLabel)}
+								</span>{" "}
+								{intl.formatMessage(
+									{
+										sakura: themeMessages.sakuraName,
+										snow: themeMessages.snowName,
+										koyo: themeMessages.koyoName,
+										star: themeMessages.starName,
+										christmas: themeMessages.christmasName,
+									}[currentTheme.id as keyof typeof THEME_STG],
+								)}
 							</div>
 							<div>
-								<span className="font-semibold">{UI_TEXT.colorsLabel}</span>{" "}
+								<span className="font-semibold">
+									{intl.formatMessage(UI_TEXT.colorsLabel)}
+								</span>{" "}
 								{currentTheme.colors.join(", ")}
 							</div>
 							<div>
-								<span className="font-semibold">{UI_TEXT.piecesLabel}</span>{" "}
+								<span className="font-semibold">
+									{intl.formatMessage(UI_TEXT.piecesLabel)}
+								</span>{" "}
 								{currentTheme.numberOfPieces}
 							</div>
 							<div>
-								<span className="font-semibold">{UI_TEXT.gravityLabel}</span>{" "}
+								<span className="font-semibold">
+									{intl.formatMessage(UI_TEXT.gravityLabel)}
+								</span>{" "}
 								{currentTheme.gravity}
 							</div>
 							{currentTheme.wind !== undefined && (
 								<div>
-									<span className="font-semibold">{UI_TEXT.windLabel}</span>{" "}
+									<span className="font-semibold">
+										{intl.formatMessage(UI_TEXT.windLabel)}
+									</span>{" "}
 									{currentTheme.wind}
 								</div>
 							)}
 							{currentTheme.initialVelocityY !== undefined && (
 								<div>
 									<span className="font-semibold">
-										{UI_TEXT.initialVelocityYLabel}
+										{intl.formatMessage(UI_TEXT.initialVelocityYLabel)}
 									</span>{" "}
 									{currentTheme.initialVelocityY}
 								</div>
@@ -213,7 +330,7 @@ const SeasonalPage = () => {
 							{currentTheme.initialVelocityX !== undefined && (
 								<div>
 									<span className="font-semibold">
-										{UI_TEXT.initialVelocityXLabel}
+										{intl.formatMessage(UI_TEXT.initialVelocityXLabel)}
 									</span>{" "}
 									{currentTheme.initialVelocityX}
 								</div>
@@ -224,7 +341,9 @@ const SeasonalPage = () => {
 							onClick={handleCopyCode}
 							className="w-20 px-2 py-1 text-xs bg-gradient-to-r from-orange-100 to-pink-200 text-gray-800 font-semibold rounded hover:from-orange-200 hover:to-pink-300 transition-all whitespace-nowrap"
 						>
-							{copied ? UI_TEXT.copiedButton : UI_TEXT.copyCodeButton}
+							{intl.formatMessage(
+								copied ? UI_TEXT.copiedButton : UI_TEXT.copyCodeButton,
+							)}
 						</button>
 					</div>
 				</div>
