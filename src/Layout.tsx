@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import LanguageSelector from "./components/LanguageSelector";
 
@@ -6,8 +7,47 @@ const NAV_ACTIVE_STYLES = "text-indigo-600 dark:text-indigo-300 font-bold";
 export const NAV_HOVER_STYLES =
 	"hover:text-indigo-600 dark:hover:text-indigo-300";
 
+const navMessages = defineMessages({
+	basic: {
+		id: "layout.nav.basic",
+		defaultMessage: "Basic",
+		description: "ナビゲーション：Basicページへのリンク",
+	},
+	countdown: {
+		id: "layout.nav.countdown",
+		defaultMessage: "Countdown",
+		description: "ナビゲーション：Countdownページへのリンク",
+	},
+	toast: {
+		id: "layout.nav.toast",
+		defaultMessage: "Toast",
+		description: "ナビゲーション：Toastページへのリンク",
+	},
+	seasonal: {
+		id: "layout.nav.seasonal",
+		defaultMessage: "Seasonal",
+		description: "ナビゲーション：Seasonalページへのリンク",
+	},
+	playground: {
+		id: "layout.nav.playground",
+		defaultMessage: "Playground",
+		description: "ナビゲーション：Playgroundページへのリンク",
+	},
+	format: {
+		id: "layout.nav.format",
+		defaultMessage: "Format",
+		description: "ナビゲーション：Formatページへのリンク",
+	},
+});
+
 const Layout = () => {
-	const appName = "React Confetti";
+	const intl = useIntl();
+	const appName = intl.formatMessage({
+		id: "layout.appName",
+		defaultMessage: "React Confetti",
+		description:
+			"アプリケーション名：翻訳サンプルのため、可能な範囲で翻訳してください。翻訳が不自然な言語では原文のままでも構いません。",
+	});
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isDarkMode, setIsDarkMode] = useState(() => {
 		const saved = localStorage.getItem("react-confetti-intl:darkMode");
@@ -25,12 +65,12 @@ const Layout = () => {
 	}, [isDarkMode]);
 
 	const navLinks = [
-		{ to: "/basic", label: "Basic" },
-		{ to: "/countdown", label: "Countdown" },
-		{ to: "/toast", label: "Toast" },
-		{ to: "/seasonal", label: "Seasonal" },
-		{ to: "/playground", label: "Playground" },
-		{ to: "/format", label: "Format" },
+		{ key: "basic", to: "/basic", label: navMessages.basic },
+		{ key: "countdown", to: "/countdown", label: navMessages.countdown },
+		{ key: "toast", to: "/toast", label: navMessages.toast },
+		{ key: "seasonal", to: "/seasonal", label: navMessages.seasonal },
+		{ key: "playground", to: "/playground", label: navMessages.playground },
+		{ key: "format", to: "/format", label: navMessages.format },
 	];
 
 	return (
@@ -59,7 +99,7 @@ const Layout = () => {
 										}`
 									}
 								>
-									{link.label}
+									<FormattedMessage {...link.label} />
 								</NavLink>
 							))}
 						</div>
@@ -97,7 +137,7 @@ const Layout = () => {
 										}`
 									}
 								>
-									{link.label}
+									<FormattedMessage {...link.label} />
 								</NavLink>
 							))}
 						</div>
@@ -112,26 +152,44 @@ const Layout = () => {
 			<footer className="py-4 px-4 text-center text-sm text-gray-600 dark:text-gray-400">
 				<div className="flex flex-col gap-2">
 					<div>
-						<b>{appName} Sample App</b> by kkoisland (Keiko) | Built with{" "}
-						<a
-							href="https://github.com/alampros/react-confetti"
-							target="_blank"
-							rel="noopener noreferrer"
-							className={`underline ${NAV_HOVER_STYLES}`}
-						>
-							<em>react-confetti</em>
-						</a>
+						<FormattedMessage
+							id="layout.footerLine1"
+							defaultMessage="<b>{appName} Sample App</b> by kkoisland (Keiko) | Built with <link>react-confetti</link>"
+							description="フッター：アプリ情報とreact-confettiへのリンク。翻訳サンプルのため、byも言語に応じて自然な表現に翻訳してください"
+							values={{
+								appName,
+								b: (chunks) => <b>{chunks}</b>,
+								link: (chunks) => (
+									<a
+										href="https://github.com/alampros/react-confetti"
+										target="_blank"
+										rel="noopener noreferrer"
+										className={`underline ${NAV_HOVER_STYLES}`}
+									>
+										<em>{chunks}</em>
+									</a>
+								),
+							}}
+						/>
 					</div>
 					<div>
-						View Source on{" "}
-						<a
-							href="https://github.com/kkoisland/react-confetti-intl"
-							target="_blank"
-							rel="noopener noreferrer"
-							className={`underline ${NAV_HOVER_STYLES}`}
-						>
-							GitHub
-						</a>
+						<FormattedMessage
+							id="layout.footerLine2"
+							defaultMessage="View Source on <link>GitHub</link>"
+							description="フッター：GitHubリポジトリへのリンク"
+							values={{
+								link: (chunks) => (
+									<a
+										href="https://github.com/kkoisland/react-confetti-intl"
+										target="_blank"
+										rel="noopener noreferrer"
+										className={`underline ${NAV_HOVER_STYLES}`}
+									>
+										{chunks}
+									</a>
+								),
+							}}
+						/>
 					</div>
 				</div>
 			</footer>
