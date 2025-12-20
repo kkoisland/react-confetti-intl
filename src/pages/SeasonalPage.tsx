@@ -104,7 +104,8 @@ const UI_TEXT = defineMessages({
 	copiedButton: {
 		id: "seasonal.copiedButton",
 		defaultMessage: "Copied!",
-		description: "ボタン：コピー完了状態",
+		description:
+			"ボタン：コピー完了状態。UI制約あり：最大9文字。短縮必須。意味優先。",
 	},
 	copyCodeButton: {
 		id: "seasonal.copyCodeButton",
