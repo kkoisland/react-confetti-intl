@@ -1,0 +1,421 @@
+[
+	{
+		"id": "basic.startButton",
+		"defaultMessage": "Start Confetti",
+		"description": "ボタン：紙吹雪を開始",
+		"file": "BasicPage.tsx"
+	},
+	{
+		"id": "basic.stopButton",
+		"defaultMessage": "Stop Confetti",
+		"description": "ボタン：紙吹雪を停止",
+		"file": "BasicPage.tsx"
+	},
+	{
+		"id": "countdown.completeMessage",
+		"defaultMessage": "🎉 Countdown complete!",
+		"description": "メッセージ：カウントダウン完了時に表示",
+		"file": "CountdownPage.tsx"
+	},
+	{
+		"id": "countdown.resetButton",
+		"defaultMessage": "Reset",
+		"description": "ボタン：カウントダウンをリセット",
+		"file": "CountdownPage.tsx"
+	},
+	{
+		"id": "countdown.startButton",
+		"defaultMessage": "Start",
+		"description": "ボタン：カウントダウンを開始",
+		"file": "CountdownPage.tsx"
+	},
+	{
+		"id": "format.convertedCurrency",
+		"defaultMessage": "(USD → {toCurrency} at {rate})",
+		"description": "説明：通貨変換表示",
+		"file": "FormatPage.tsx"
+	},
+	{
+		"id": "format.currencyHeading",
+		"defaultMessage": "Currency",
+		"description": "見出し：通貨フォーマットセクション",
+		"file": "FormatPage.tsx"
+	},
+	{
+		"id": "format.dateRangeHeading",
+		"defaultMessage": "Date Range",
+		"description": "見出し：日付範囲フォーマットセクション",
+		"file": "FormatPage.tsx"
+	},
+	{
+		"id": "format.dateTimeHeading",
+		"defaultMessage": "Date & Time",
+		"description": "見出し：日時フォーマットセクション",
+		"file": "FormatPage.tsx"
+	},
+	{
+		"id": "format.displayNameHeading",
+		"defaultMessage": "Display Name",
+		"description": "見出し：表示名フォーマットセクション",
+		"file": "FormatPage.tsx"
+	},
+	{
+		"id": "format.itemCount",
+		"defaultMessage": "{count, plural, one {# item} other {# items}}",
+		"file": "FormatPage.tsx"
+	},
+	{
+		"id": "format.listHeading",
+		"defaultMessage": "List",
+		"description": "見出し：リストフォーマットセクション",
+		"file": "FormatPage.tsx"
+	},
+	{
+		"id": "format.numberHeading",
+		"defaultMessage": "Number",
+		"description": "見出し：数値フォーマットセクション",
+		"file": "FormatPage.tsx"
+	},
+	{
+		"id": "format.pluralHeading",
+		"defaultMessage": "Plural",
+		"description": "見出し：複数形フォーマットセクション",
+		"file": "FormatPage.tsx"
+	},
+	{
+		"id": "format.relativeTimeHeading",
+		"defaultMessage": "Relative Time",
+		"description": "見出し：相対時刻フォーマットセクション",
+		"file": "FormatPage.tsx"
+	},
+	{
+		"id": "format.sameCurrency",
+		"defaultMessage": "(Same)",
+		"description": "説明：金額に通貨変換が発生しない場合の注記。直訳が不自然な言語では「通貨変換なし」など意味が分かる表現にしてください。",
+		"file": "FormatPage.tsx"
+	},
+	{
+		"id": "layout.appName",
+		"defaultMessage": "React Confetti",
+		"description": "アプリケーション名：翻訳サンプルのため、可能な範囲で翻訳してください。翻訳が不自然な言語では原文のままでも構いません。",
+		"file": "Layout.tsx"
+	},
+	{
+		"id": "layout.footerLine1",
+		"defaultMessage": "<b>{appName} Sample App</b> by kkoisland (Keiko) | Built with <link>react-confetti</link>",
+		"description": "フッター：アプリ情報とreact-confettiへのリンク。翻訳サンプルのため、byも言語に応じて自然な表現に翻訳してください",
+		"file": "Layout.tsx"
+	},
+	{
+		"id": "layout.footerLine2",
+		"defaultMessage": "View Source on <link>GitHub</link>",
+		"description": "フッター：GitHubリポジトリへのリンク",
+		"file": "Layout.tsx"
+	},
+	{
+		"id": "layout.nav.basic",
+		"defaultMessage": "Basic",
+		"description": "ナビゲーション：Basicページへのリンク",
+		"file": "Layout.tsx"
+	},
+	{
+		"id": "layout.nav.countdown",
+		"defaultMessage": "Countdown",
+		"description": "ナビゲーション：Countdownページへのリンク",
+		"file": "Layout.tsx"
+	},
+	{
+		"id": "layout.nav.format",
+		"defaultMessage": "Format",
+		"description": "ナビゲーション：Formatページへのリンク",
+		"file": "Layout.tsx"
+	},
+	{
+		"id": "layout.nav.playground",
+		"defaultMessage": "Playground",
+		"description": "ナビゲーション：Playgroundページへのリンク",
+		"file": "Layout.tsx"
+	},
+	{
+		"id": "layout.nav.seasonal",
+		"defaultMessage": "Seasonal",
+		"description": "ナビゲーション：Seasonalページへのリンク",
+		"file": "Layout.tsx"
+	},
+	{
+		"id": "layout.nav.toast",
+		"defaultMessage": "Toast",
+		"description": "ナビゲーション：Toastページへのリンク",
+		"file": "Layout.tsx"
+	},
+	{
+		"id": "playground.changesOnlyButton",
+		"defaultMessage": "Changes Only",
+		"description": "ボタン：変更されたパラメータのみ表示",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.colorsLabel",
+		"defaultMessage": "Colors:",
+		"description": "ラベル：色設定セクション",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.copyCodeButton",
+		"defaultMessage": "Copy Code",
+		"description": "ボタン：UI制約あり：最大9文字。短縮必須。意味優先。",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.customColors",
+		"defaultMessage": "Custom colors (up to 5)",
+		"description": "ラジオボタン：カスタムカラーを使用",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.defaultColors",
+		"defaultMessage": "Use default colors (17 colors)",
+		"description": "ラジオボタン：デフォルトの色を使用",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.defaultValue",
+		"defaultMessage": "(default: {defaultValue})",
+		"description": "スライダーのデフォルト値表示",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.friction",
+		"defaultMessage": "Friction",
+		"description": "スライダー：摩擦",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.gravity",
+		"defaultMessage": "Gravity",
+		"description": "スライダー：重力",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.initialVelocityX",
+		"defaultMessage": "Initial Velocity X",
+		"description": "スライダー：初期速度X",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.initialVelocityY",
+		"defaultMessage": "Initial Velocity Y",
+		"description": "スライダー：初期速度Y",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.numberOfPieces",
+		"defaultMessage": "Number of Pieces",
+		"description": "スライダー：紙吹雪の数",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.opacity",
+		"defaultMessage": "Opacity",
+		"description": "スライダー：不透明度",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.presetThemes",
+		"defaultMessage": "Preset Themes:",
+		"description": "ラベル：プリセットテーマセクション",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.resetAllButton",
+		"defaultMessage": "Reset All",
+		"description": "ボタン：すべてをリセット",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.resetColorsButton",
+		"defaultMessage": "Reset Colors",
+		"description": "ボタン：色をリセット",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.resetSlidersButton",
+		"defaultMessage": "Reset Sliders",
+		"description": "ボタン：スライダーをリセット",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.resetTooltip",
+		"defaultMessage": "Reset to default",
+		"description": "ツールチップ：デフォルト値にリセット",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.showAllButton",
+		"defaultMessage": "Show All",
+		"description": "ボタン：すべてのパラメータを表示",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.startButton",
+		"defaultMessage": "Start Confetti",
+		"description": "ボタン：紙吹雪を開始",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.stopButton",
+		"defaultMessage": "Stop Confetti",
+		"description": "ボタン：紙吹雪を停止",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "playground.wind",
+		"defaultMessage": "Wind",
+		"description": "スライダー：風",
+		"file": "PlaygroundPage.tsx"
+	},
+	{
+		"id": "seasonal.colorsLabel",
+		"defaultMessage": "Colors:",
+		"description": "ラベル：カラー表示",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "seasonal.copiedButton",
+		"defaultMessage": "Copied!",
+		"description": "ボタン：コピー完了状態",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "seasonal.copyCodeButton",
+		"defaultMessage": "Copy Code",
+		"description": "ボタン：UI制約あり：最大9文字。短縮必須。意味優先。",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "seasonal.gravityLabel",
+		"defaultMessage": "Gravity:",
+		"description": "ラベル：重力パラメータ表示",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "seasonal.initialVelocityXLabel",
+		"defaultMessage": "InitialVelocityX:",
+		"description": "ラベル：X軸初速パラメータ表示",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "seasonal.initialVelocityYLabel",
+		"defaultMessage": "InitialVelocityY:",
+		"description": "ラベル：Y軸初速パラメータ表示",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "seasonal.piecesLabel",
+		"defaultMessage": "Pieces:",
+		"description": "ラベル：紙吹雪の個数表示",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "seasonal.stopButton",
+		"defaultMessage": "Stop Confetti",
+		"description": "ボタン：紙吹雪を停止",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "seasonal.theme.christmas.description",
+		"defaultMessage": "Festive confetti bursts and spreads in Christmas colors",
+		"description": "テーマ説明：クリスマスの紙吹雪が弾ける様子",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "seasonal.theme.christmas.name",
+		"defaultMessage": "Christmas",
+		"description": "テーマ名：クリスマス",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "seasonal.theme.koyo.description",
+		"defaultMessage": "Autumn leaves dance and swirl in the wind",
+		"description": "テーマ説明：紅葉が風に舞う様子",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "seasonal.theme.koyo.name",
+		"defaultMessage": "Autumn",
+		"description": "テーマ名：紅葉",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "seasonal.theme.sakura.description",
+		"defaultMessage": "Cherry blossom petals gently swirl and flutter in the breeze",
+		"description": "テーマ説明：桜の花びらが風に舞う様子",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "seasonal.theme.sakura.name",
+		"defaultMessage": "Sakura",
+		"description": "テーマ名：桜",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "seasonal.theme.snow.description",
+		"defaultMessage": "Snowflakes softly fall and scatter downward (dark mode recommended)",
+		"description": "テーマ説明：雪が静かに降る様子",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "seasonal.theme.snow.name",
+		"defaultMessage": "Snow",
+		"description": "テーマ名：雪",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "seasonal.theme.star.description",
+		"defaultMessage": "Gold, silver, and sand shimmer and gently float (dark mode recommended)",
+		"description": "テーマ説明：金銀砂がきらめく様子",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "seasonal.theme.star.name",
+		"defaultMessage": "Star",
+		"description": "テーマ名：星",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "seasonal.themeLabel",
+		"defaultMessage": "Theme:",
+		"description": "ラベル：テーマ名表示",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "seasonal.windLabel",
+		"defaultMessage": "Wind:",
+		"description": "ラベル：風パラメータ表示",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "toast.completeMessage",
+		"defaultMessage": "All Completed!",
+		"description": "メッセージ：全タスク完了時に表示",
+		"file": "ToastPage.tsx"
+	},
+	{
+		"id": "toast.task1",
+		"defaultMessage": "Task 1",
+		"description": "タスク1のラベル",
+		"file": "ToastPage.tsx"
+	},
+	{
+		"id": "toast.task2",
+		"defaultMessage": "Task 2",
+		"description": "タスク2のラベル",
+		"file": "ToastPage.tsx"
+	},
+	{
+		"id": "toast.task3",
+		"defaultMessage": "Task 3",
+		"description": "タスク3のラベル",
+		"file": "ToastPage.tsx"
+	}
+]
