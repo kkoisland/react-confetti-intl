@@ -20,6 +20,7 @@
 	"layout.appName": "React Confetti",
 	"layout.footerLine1": "<b>{appName} Voorbeeldapp</b> door kkoisland (Keiko) | Gemaakt met <link>react-confetti</link>",
 	"layout.footerLine2": "Broncode bekijken op <link>GitHub</link>",
+	"layout.footerNote": "App-naam is vertaald voor demonstratie",
 	"layout.nav.basic": "Basis",
 	"layout.nav.countdown": "Aftelling",
 	"layout.nav.format": "Formaat",

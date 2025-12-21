@@ -20,6 +20,7 @@
 	"layout.appName": "React 五彩纸屑",
 	"layout.footerLine1": "<b>{appName} 示例应用</b>（kkoisland / Keiko）| 使用 <link>react-confetti</link>",
 	"layout.footerLine2": "在 <link>GitHub</link> 查看源代码",
+	"layout.footerNote": "应用名称也用于演示而翻译",
 	"layout.nav.basic": "基础",
 	"layout.nav.countdown": "倒计时",
 	"layout.nav.format": "格式",

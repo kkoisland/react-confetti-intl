@@ -20,6 +20,7 @@
 	"layout.appName": "React コンフェッティ",
 	"layout.footerLine1": "<b>{appName} サンプルアプリ</b>（kkoisland / Keiko） | <link>react-confetti</link> 使用",
 	"layout.footerLine2": "<link>GitHub</link> でソースを見る",
+	"layout.footerNote": "アプリ名もデモ用に翻訳されています",
 	"layout.nav.basic": "基本",
 	"layout.nav.countdown": "カウントダウン",
 	"layout.nav.format": "フォーマット",

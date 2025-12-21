@@ -193,6 +193,13 @@ const Layout = () => {
 							}}
 						/>
 					</div>
+					<div className="text-xs mt-2 text-gray-500 dark:text-gray-500">
+						<FormattedMessage
+							id="layout.footerNote"
+							defaultMessage="App name is translated for demonstration"
+							description="フッター：注釈。アプリ名も翻訳サンプルとして訳されていることを示す"
+						/>
+					</div>
 				</div>
 			</footer>
 		</div>

@@ -20,6 +20,7 @@
 	"layout.appName": "React 색종이",
 	"layout.footerLine1": "<b>{appName} 샘플 앱</b> (kkoisland / Keiko) | <link>react-confetti</link> 사용",
 	"layout.footerLine2": "<link>GitHub</link>에서 소스 보기",
+	"layout.footerNote": "앱 이름도 데모용으로 번역되었습니다",
 	"layout.nav.basic": "기본",
 	"layout.nav.countdown": "카운트다운",
 	"layout.nav.format": "형식",

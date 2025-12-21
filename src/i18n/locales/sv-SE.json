@@ -20,6 +20,7 @@
 	"layout.appName": "React Konfetti",
 	"layout.footerLine1": "<b>{appName} Exempelapp</b> av kkoisland (Keiko) | Skapad med <link>react-confetti</link>",
 	"layout.footerLine2": "Visa källkod på <link>GitHub</link>",
+	"layout.footerNote": "Appnamnet är översatt i demonstrationssyfte",
 	"layout.nav.basic": "Grundläggande",
 	"layout.nav.countdown": "Nedräkning",
 	"layout.nav.format": "Format",
