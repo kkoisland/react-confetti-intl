@@ -12,6 +12,18 @@
 		"file": "BasicPage.tsx"
 	},
 	{
+		"id": "common.copiedButtonShort",
+		"defaultMessage": "Copied!",
+		"description": "ボタン：UI制約あり：最大9文字。短縮必須。意味優先。",
+		"file": "SeasonalPage.tsx"
+	},
+	{
+		"id": "common.copyCodeButtonShort",
+		"defaultMessage": "Copy Code",
+		"description": "ボタン：UI制約あり：最大9文字。短縮必須。意味優先。",
+		"file": "SeasonalPage.tsx"
+	},
+	{
 		"id": "countdown.completeMessage",
 		"defaultMessage": "🎉 Countdown complete!",
 		"description": "メッセージ：カウントダウン完了時に表示",
@@ -161,12 +173,6 @@
 		"file": "PlaygroundPage.tsx"
 	},
 	{
-		"id": "playground.copyCodeButton",
-		"defaultMessage": "Copy Code",
-		"description": "ボタン：UI制約あり：最大9文字。短縮必須。意味優先。",
-		"file": "PlaygroundPage.tsx"
-	},
-	{
 		"id": "playground.customColors",
 		"defaultMessage": "Custom colors (up to 5)",
 		"description": "ラジオボタン：カスタムカラーを使用",
@@ -278,18 +284,6 @@
 		"id": "seasonal.colorsLabel",
 		"defaultMessage": "Colors:",
 		"description": "ラベル：カラー表示",
-		"file": "SeasonalPage.tsx"
-	},
-	{
-		"id": "seasonal.copiedButton",
-		"defaultMessage": "Copied!",
-		"description": "ボタン：コピー完了状態",
-		"file": "SeasonalPage.tsx"
-	},
-	{
-		"id": "seasonal.copyCodeButton",
-		"defaultMessage": "Copy Code",
-		"description": "ボタン：UI制約あり：最大9文字。短縮必須。意味優先。",
 		"file": "SeasonalPage.tsx"
 	},
 	{
