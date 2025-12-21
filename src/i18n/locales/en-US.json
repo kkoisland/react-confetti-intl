@@ -26,6 +26,7 @@
 	"layout.nav.toast": "Toast",
 	"playground.changesOnlyButton": "Changes Only",
 	"playground.colorsLabel": "Colors:",
+	"playground.copiedButton": "Copied!",
 	"playground.copyCodeButton": "Copy Code",
 	"playground.customColors": "Custom colors (up to 5)",
 	"playground.defaultColors": "Use default colors (17 colors)",

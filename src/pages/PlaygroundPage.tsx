@@ -583,14 +583,21 @@ const PlaygroundPage = () => {
 							onClick={handleCopyCode}
 							className="w-20 px-2 py-1 text-xs bg-gradient-to-r from-blue-200 to-purple-300 hover:from-blue-400 hover:to-purple-500 text-gray-800 hover:text-white font-semibold rounded transition-all whitespace-nowrap"
 						>
-							{copied
-								? "✔︎"
-								: intl.formatMessage({
-										id: "playground.copyCodeButton",
-										defaultMessage: "Copy Code",
-										description:
-											"ボタン：UI制約あり：最大9文字。短縮必須。意味優先。",
-									})}
+							{intl.formatMessage(
+								copied
+									? {
+											id: "playground.copiedButton",
+											defaultMessage: "Copied!",
+											description:
+												"ボタン：コピー完了状態。UI制約あり：最大9文字。短縮必須。意味優先。",
+										}
+									: {
+											id: "playground.copyCodeButton",
+											defaultMessage: "Copy Code",
+											description:
+												"ボタン：UI制約あり：最大9文字。短縮必須。意味優先。",
+										},
+							)}
 						</button>
 					</div>
 
