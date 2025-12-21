@@ -102,13 +102,12 @@ const UI_TEXT = defineMessages({
 		description: "ラベル：X軸初速パラメータ表示",
 	},
 	copiedButton: {
-		id: "seasonal.copiedButton",
+		id: "common.copiedButtonShort",
 		defaultMessage: "Copied!",
-		description:
-			"ボタン：コピー完了状態。UI制約あり：最大9文字。短縮必須。意味優先。",
+		description: "ボタン：UI制約あり：最大9文字。短縮必須。意味優先。",
 	},
 	copyCodeButton: {
-		id: "seasonal.copyCodeButton",
+		id: "common.copyCodeButtonShort",
 		defaultMessage: "Copy Code",
 		description: "ボタン：UI制約あり：最大9文字。短縮必須。意味優先。",
 	},

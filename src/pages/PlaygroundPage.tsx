@@ -586,13 +586,13 @@ const PlaygroundPage = () => {
 							{intl.formatMessage(
 								copied
 									? {
-											id: "playground.copiedButton",
+											id: "common.copiedButtonShort",
 											defaultMessage: "Copied!",
 											description:
-												"ボタン：コピー完了状態。UI制約あり：最大9文字。短縮必須。意味優先。",
+												"ボタン：UI制約あり：最大9文字。短縮必須。意味優先。",
 										}
 									: {
-											id: "playground.copyCodeButton",
+											id: "common.copyCodeButtonShort",
 											defaultMessage: "Copy Code",
 											description:
 												"ボタン：UI制約あり：最大9文字。短縮必須。意味優先。",
