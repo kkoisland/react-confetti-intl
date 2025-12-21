@@ -26,6 +26,7 @@
 	"layout.nav.toast": "토스트",
 	"playground.changesOnlyButton": "변경만",
 	"playground.colorsLabel": "색상:",
+	"playground.copiedButton": "복사됨!",
 	"playground.copyCodeButton": "복사",
 	"playground.customColors": "사용자 정의 색상 (최대 5개)",
 	"playground.defaultColors": "기본 색상 (17개)",

@@ -26,6 +26,7 @@
 	"layout.nav.toast": "提示",
 	"playground.changesOnlyButton": "仅修改",
 	"playground.colorsLabel": "颜色：",
+	"playground.copiedButton": "已复制！",
 	"playground.copyCodeButton": "复制",
 	"playground.customColors": "自定义颜色（最多5种）",
 	"playground.defaultColors": "默认颜色（17种）",
