@@ -51,8 +51,6 @@ console.log("📝 Extracting translations from code...");
 // Step 1: Extract translations to en-US.json
 execSync(EXTRACT_CMD, { stdio: "inherit" });
 
-console.log("✅ en-US.json updated");
-
 // Step 1.5: Extract detailed messages for translation companies
 const detailedMessagesPath = path.join(LOCALES_DIR, ".messages-temp.json");
 const EXTRACT_DETAILED_CMD = [
@@ -89,7 +87,10 @@ const enUSPath = path.join(LOCALES_DIR, BASE_LOCALE_FILE);
 const enUSContent: Translations = JSON.parse(fs.readFileSync(enUSPath, UTF8));
 const validIds = Object.keys(enUSContent);
 
-console.log(`📋 Found ${validIds.length} translation keys in code`);
+// Step 2.1: Normalize en-US.json indentation to tabs (same as other locales)
+fs.writeFileSync(enUSPath, `${JSON.stringify(enUSContent, null, "\t")}\n`);
+
+console.log(`✅ en-US.json updated (${validIds.length} keys)`);
 
 // Step 3: Update other locale files
 for (const locale of LOCALES) {
