@@ -125,6 +125,12 @@
 		"file": "Layout.tsx"
 	},
 	{
+		"id": "layout.footerNote",
+		"defaultMessage": "App name is translated for demonstration",
+		"description": "フッター：注釈。アプリ名も翻訳サンプルとして訳されていることを示す",
+		"file": "Layout.tsx"
+	},
+	{
 		"id": "layout.nav.basic",
 		"defaultMessage": "Basic",
 		"description": "ナビゲーション：Basicページへのリンク",

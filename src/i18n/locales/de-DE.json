@@ -20,6 +20,7 @@
 	"layout.appName": "React Konfetti",
 	"layout.footerLine1": "<b>{appName} Beispiel-App</b> von kkoisland (Keiko) | Erstellt mit <link>react-confetti</link>",
 	"layout.footerLine2": "Quellcode auf <link>GitHub</link> ansehen",
+	"layout.footerNote": "App-Name ist zu Demonstrationszwecken übersetzt",
 	"layout.nav.basic": "Grundlagen",
 	"layout.nav.countdown": "Countdown",
 	"layout.nav.format": "Format",

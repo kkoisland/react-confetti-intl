@@ -20,6 +20,7 @@
 	"layout.appName": "React Coriandoli",
 	"layout.footerLine1": "<b>App di esempio {appName}</b> di kkoisland (Keiko) | Realizzata con <link>react-confetti</link>",
 	"layout.footerLine2": "Visualizza il codice su <link>GitHub</link>",
+	"layout.footerNote": "Il nome dell'app è tradotto a scopo dimostrativo",
 	"layout.nav.basic": "Base",
 	"layout.nav.countdown": "Conto alla rovescia",
 	"layout.nav.format": "Formato",
