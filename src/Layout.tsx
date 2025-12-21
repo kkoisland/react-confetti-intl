@@ -158,9 +158,10 @@ const Layout = () => {
 							description="フッター：アプリ情報とreact-confettiへのリンク。翻訳サンプルのため、byも言語に応じて自然な表現に翻訳してください"
 							values={{
 								appName,
-								b: (chunks) => <b>{chunks}</b>,
+								b: (chunks) => <b key="footer-bold">{chunks}</b>,
 								link: (chunks) => (
 									<a
+										key="footer-link"
 										href="https://github.com/alampros/react-confetti"
 										target="_blank"
 										rel="noopener noreferrer"
@@ -180,6 +181,7 @@ const Layout = () => {
 							values={{
 								link: (chunks) => (
 									<a
+										key="footer-github-link"
 										href="https://github.com/kkoisland/react-confetti-intl"
 										target="_blank"
 										rel="noopener noreferrer"

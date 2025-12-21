@@ -90,7 +90,6 @@ const ParameterSlider = ({
 
 const PlaygroundPage = () => {
 	const intl = useIntl();
-	console.log(themes);
 	const [numberOfPieces, setNumberOfPieces] = useState(200);
 	const [gravity, setGravity] = useState(0.1);
 	const [wind, setWind] = useState(0);
