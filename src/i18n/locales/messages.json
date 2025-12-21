@@ -1,0 +1,27 @@
+[
+	{
+		"id": "51BEV2",
+		"defaultMessage": "Start Confetti",
+		"file": "BasicPage.tsx"
+	},
+	{
+		"id": "B8MRsI",
+		"defaultMessage": "{count, plural, one {# item} other {# items}}",
+		"file": "FormatPage.tsx"
+	},
+	{
+		"id": "JpmFYq",
+		"defaultMessage": "Stop Confetti",
+		"file": "BasicPage.tsx"
+	},
+	{
+		"id": "OHEhHa",
+		"defaultMessage": "{gender, select, male {He liked this} female {She liked this} other {They liked this}}",
+		"file": "FormatPage.tsx"
+	},
+	{
+		"id": "n8yUgb",
+		"defaultMessage": "{position, selectordinal, one {#st} two {#nd} few {#rd} other {#th}} place",
+		"file": "FormatPage.tsx"
+	}
+]
