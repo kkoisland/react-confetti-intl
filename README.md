@@ -1,8 +1,14 @@
 # React Confetti Sample App
 
+📊 For a visual overview of this project, see the [Speaker Deck presentation](https://speakerdeck.com/kkoisland/react-confetti-with-i18n).
+
 A collection of interactive examples demonstrating various use cases of the [react-confetti](https://github.com/alampros/react-confetti/) library. This project serves as a reference implementation for a Japanese React tutorial book.
 
-<!-- 🌐 **Live Demo:** https://kkoisland.github.io/react-confetti-app/ -->
+## Resources
+
+🚀 **Live Demo**: https://kkoisland.github.io/react-confetti-intl/
+
+📝 **Slides**: [Google Slides](https://docs.google.com/presentation/d/12LJkobZPQwQyVkhdrEsp68T5wXboIY8fvQWEsE_WhCU/preview) — Same content as the Speaker Deck presentation, for those who cannot access Speaker Deck.
 
 ## Setup
 
