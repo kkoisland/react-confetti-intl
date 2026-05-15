@@ -31,6 +31,13 @@ const FormatPage = () => {
 
 	return (
 		<div className="p-8 max-w-4xl mx-auto">
+			<div className="sticky top-12 z-10 grid grid-cols-2 gap-4 py-2 mb-6 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700 font-semibold text-gray-500 dark:text-gray-400">
+				<div>
+					{intl.formatDisplayName(intl.locale, { type: "language" })} –{" "}
+					{intl.locale}
+				</div>
+				<div>en-US</div>
+			</div>
 			<h2 className="text-2xl mb-6">
 				<FormattedMessage
 					id="format.dateTimeHeading"
