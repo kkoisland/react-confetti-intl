@@ -1,3 +1,4 @@
+import { Menu, Moon, Sun, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import { Link, NavLink, Outlet } from "react-router-dom";
@@ -109,16 +110,16 @@ const Layout = () => {
 						{/* Right side buttons */}
 						<div className="flex items-center gap-4">
 							<button type="button" onClick={toggleTheme}>
-								{isDarkMode ? "☀️" : "🌙"}
+								{isDarkMode ? <Moon /> : <Sun />}
 							</button>
 
 							<div className="md:hidden">
 								<button
 									type="button"
 									onClick={() => setIsMenuOpen(!isMenuOpen)}
-									className={`text-3xl ${NAV_HOVER_STYLES} transition-colors`}
+									className={`${NAV_HOVER_STYLES} transition-colors`}
 								>
-									{isMenuOpen ? "✕" : "☰"}
+									{isMenuOpen ? <X /> : <Menu />}
 								</button>
 							</div>
 						</div>
